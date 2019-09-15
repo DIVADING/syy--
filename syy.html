@@ -98,7 +98,9 @@
         font-size:13px;
     font-weight: bold;
   }
-  
+  [v-cloak] {
+    display:none;
+  }
   </style>
 </head>
 
@@ -110,13 +112,13 @@
         <div>
           <el-input style="width:500px" placeholder="输入病号" v-model="username" clearable></el-input>
         </div>
-          <el-button type="danger" @click='Login()'>登录</el-button>
+          <el-button v-cloak type="danger" @click='Login()'>登录</el-button>
           </el-input>
         </div>
     <el-container>
 
         
-      <el-main v-if='username_real'>
+      <el-main v-cloak v-if='username_real'>
 
         <el-divider content-position="center">基本信息</el-divider>
         <el-row :gutter="1" style='text-align: left;font-size: 14px;color: #909399;line-height: 23px;vertical-align: middle;margin-bottom: 1px;'>
