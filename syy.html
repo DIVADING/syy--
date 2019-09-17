@@ -155,36 +155,36 @@
       @mysend2='mysend2'
       @mysend3='mysend3' @mysend3_d='mysend3_d'
       @mysend4='mysend4'
-      @mysend5='mysend5'
+      @mysend5='mysend5' @mysend5_d='mysend5_d'
       @mysend6='mysend6'
       @mysend7='mysend7'
       @mysend8='mysend8'
       @mysend9='mysend9'
       @mysend9_1='mysend9_1'
-      @mysend10='mysend10'
+      @mysend10='mysend10'      @mysend10_d='mysend10_d'
       @mysend11='mysend11'
       @mysend12='mysend12'
-      @mysend13='mysend13'
+      @mysend13='mysend13'      @mysend13_d='mysend13_d'
       @mysend14='mysend14'
-      @mysend15='mysend15'
-      @mysend16='mysend16'
+      @mysend15='mysend15'      @mysend15_d='mysend15_d'
+      @mysend16='mysend16'      @mysend16_d='mysend16_d'
       @mysend17='mysend17'
-      @mysend18='mysend18'
+      @mysend18='mysend18'      @mysend18_d='mysend18_d'
       @mysend19='mysend19'
-      @mysend20='mysend20'
+      @mysend20='mysend20'      @mysend20_d='mysend20_d'
       @mysend21='mysend21'
       @mysend22='mysend22'
       @mysend23='mysend23'
-      @mysend24='mysend24'
+      @mysend24='mysend24'      @mysend24_d='mysend24_d'
       @mysend25='mysend25'
       @mysend26='mysend26'
-      @mysend27='mysend27'
+      @mysend27='mysend27'      @mysend27_d='mysend27_d'
       @mysend28='mysend28'
-      @mysend29='mysend29'
-      @mysend30='mysend30'
+      @mysend29='mysend29'      @mysend29_d='mysend29_d'
+      @mysend30='mysend30'      @mysend30_d='mysend30_d'
       @mysend31='mysend31'
-      @mysend32='mysend32'
-      @mysend33='mysend33'
+      @mysend32='mysend32'      @mysend32_d='mysend32_d'
+      @mysend33='mysend33'      @mysend33_d='mysend33_d'
       @mysend34='mysend34'
       @mysend35='mysend35'
       @mysend36='mysend36'
@@ -193,10 +193,16 @@
       @mysend39='mysend39'
       @mysend40='mysend40'
       @mysend41='mysend41'
-      @mysend42='mysend42'
+      @mysend42='mysend42'      @mysend42_d='mysend42_d'
       @mysend43='mysend43'
       @mysend44='mysend44'
-      @mysend45='mysend45'
+      @mysend45='mysend45'      @mysend45_d='mysend45_d'
+      @mysend46='mysend46'      
+      @mysend47='mysend47'      @mysend47_d='mysend47_d'      
+      @mysend48='mysend48'      
+      @mysend49='mysend49'      
+      @mysend50='mysend50'      @mysend50_d='mysend50_d'    
+      @mysend51='mysend51'      @mysend51_d='mysend51_d'      
       ></component>
     </keep-alive>
 
@@ -447,6 +453,8 @@
   <td style='width:60%'>
     <div></div><el-tag type="primary" v-if="data44&&data44.length !== 0"closable @close="useChildFun44()">{{data44}}</el-tag>
     <div></div><el-tag type="primary" v-if="data45&&data45.length !== 0"closable @close="useChildFun45()">{{data45}}</el-tag>
+    <div></div><el-tag type="primary" v-if="data46&&data46.length !== 0"closable @close="useChildFun46()">{{data46}}</el-tag>
+ 
   </td>
 </tr>
 <tr style="height: 10px"><td></td></tr>
@@ -459,6 +467,8 @@
   </div>
   </td>
   <td style='width:60%'>
+    <div></div><el-tag type="info" v-if="data47&&data47.length !== 0"closable @close="useChildFun47()">{{data47}}</el-tag>
+    <div></div><el-tag type="info" v-if="data48&&data48.length !== 0"closable @close="useChildFun48()">{{data48}}</el-tag>
   </td>
 </tr>
 <tr style="height: 10px"><td></td></tr>
@@ -471,6 +481,9 @@
   </div>
   </td>
   <td style='width:60%'>
+    <div></div><el-tag type="primary" v-if="data49&&data49.length !== 0"closable @close="useChildFun49()">{{data49}}</el-tag>
+    <div></div><el-tag type="primary" v-if="data50&&data50.length !== 0"closable @close="useChildFun50()">{{data50}}</el-tag>
+    <div></div><el-tag type="primary" v-if="data51&&data51.length !== 0"closable @close="useChildFun51()">{{data51}}</el-tag>
   </td>
 </tr>
 </table>
@@ -2106,6 +2119,18 @@
       data_binary44:'',
       data45:'',
       data_binary45:'',
+      data46:'',
+      data_binary46:'',
+      data47:'',
+      data_binary47:'',
+      data48:'',
+      data_binary48:'',
+      data49:'',
+      data_binary49:'',
+      data50:'',
+      data_binary50:'',
+      data51:'',
+      data_binary51:'',
       // data1:'',
       // data_binary1:'',
       // data1:'',
@@ -2171,6 +2196,27 @@
       // 声明多选变量
       data1_d:[],
       data3_d:[],
+      data5_d:[],
+      data10_d:[],
+      data13_d:[],
+      data15_d:[],
+      data16_d:[],
+      data18_d:[],
+      data20_d:[],
+      data24_d:[],
+      data27_d:[],
+
+      data29_d:[],
+      data30_d:[],
+      data32_d:[],
+      data33_d:[],
+      data35_d:[],
+      data42_d:[],
+      data45_d:[],
+      data47_d:[],
+      data50_d:[],
+      data51_d:[],
+
       // 声明其他变量
       username:'',
       username_real:'',
@@ -2425,6 +2471,9 @@
            mydata.push('【治疗情况】 : '+this.datalist[this.data1_8-1]['治疗情况']);};
            if(this.data1_9!=0){
            mydata.push('【冠脉狭窄程度】 : '+this.datalist[this.data1_9-1]['冠脉狭窄程度']);};
+           if(this.data2_1.length!=0){
+            mydata.push('【冠造或冠脉CT（多选）】：'+this.data2);
+           };
            console.log(mydata);
            return mydata;
           },
@@ -2496,7 +2545,7 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('心悸原因 : '+this.datalist[this.data1_1-1]['心悸原因']);};
+           mydata.push('【心悸原因】: '+this.datalist[this.data1_1-1]['心悸原因']);};
 
            console.log(mydata);
            return mydata;
@@ -2541,13 +2590,19 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('病史 : '+this.datalist[this.data1_1-1]['病史']);};
+           mydata.push('【病史】: '+this.datalist[this.data1_1-1]['病史']);};
            if(this.data1_2!=0){
-           mydata.push('治疗情况 : '+this.datalist[this.data1_2-1]['治疗情况']);};
+           mydata.push('【治疗情况】: '+this.datalist[this.data1_2-1]['治疗情况']);};
            if(this.data1_3!=0){
-           mydata.push('既往心衰病史 : '+this.datalist[this.data1_3-1]['既往心衰病史']);};
+           mydata.push('【既往心衰病史】: '+this.datalist[this.data1_3-1]['既往心衰病史']);};
            if(this.data1_4!=0){
-           mydata.push('心功能 : '+this.datalist[this.data1_4-1]['心功能']);};
+           mydata.push('【心功能】: '+this.datalist[this.data1_4-1]['心功能']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【瓣膜病变1（多选）】：'+this.data2_1.join(','));
+           };
+           if(this.data2_2.length!=0){
+             mydata.push('【瓣膜病变2（多选）】：'+this.data2_2.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -2612,19 +2667,19 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('病史 : '+this.datalist[this.data1_1-1]['病史']);};
+           mydata.push('【病史】:'+this.datalist[this.data1_1-1]['病史']);};
            if(this.data1_2!=0){
-           mydata.push('类型 : '+this.datalist[this.data1_2-1]['类型']);};
+           mydata.push('【类型】:'+this.datalist[this.data1_2-1]['类型']);};
            if(this.data1_3!=0){
-           mydata.push('肺动脉高压 : '+this.datalist[this.data1_3-1]['肺动脉高压']);};
+           mydata.push('【肺动脉高压】:'+this.datalist[this.data1_3-1]['肺动脉高压']);};
            if(this.data1_4!=0){
-           mydata.push('分流 : '+this.datalist[this.data1_4-1]['分流']);};
+           mydata.push('【分流】:'+this.datalist[this.data1_4-1]['分流']);};
            if(this.data1_5!=0){
-           mydata.push('治疗情况 : '+this.datalist[this.data1_5-1]['治疗情况']);};
+           mydata.push('【治疗情况】:'+this.datalist[this.data1_5-1]['治疗情况']);};
            if(this.data1_6!=0){
-           mydata.push('既往心衰病史 : '+this.datalist[this.data1_6-1]['既往心衰病史']);};
+           mydata.push('【既往心衰病史】:'+this.datalist[this.data1_6-1]['既往心衰病史']);};
            if(this.data1_7!=0){
-           mydata.push('心功能 : '+this.datalist[this.data1_7-1]['心功能']);};
+           mydata.push('【心功能】:'+this.datalist[this.data1_7-1]['心功能']);};
            console.log(mydata);
            return mydata;
           },
@@ -2692,6 +2747,9 @@
            mydata.push('是否服用利血平类药物 : '+this.datalist[this.data1_3-1]['是否服用利血平类药物']);};
            if(this.data1_4!=0){
            mydata.push('是否服用可乐定类药物 : '+this.datalist[this.data1_4-1]['是否服用可乐定类药物']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【靶器官受损（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -2707,6 +2765,11 @@
            mydata.push(this.datalist[this.data1_4-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
+           return mydata;
           }
         },
         methods:{clearall5(){
@@ -2719,6 +2782,7 @@
         },
         updated:function() {
           this.$emit('mysend5',this.data,this.data_binary);
+          this.$emit('mysend5_d',this.data2);
         }
       },
         //第6个模板
@@ -3013,6 +3077,12 @@
            mydata.push('因呼吸系统疾病住院频次 : '+this.datalist[this.data1_8-1]['因呼吸系统疾病住院频次']);};
            if(this.data1_9!=0){
            mydata.push('动脉血气分析 : '+this.datalist[this.data1_9-1]['动脉血气分析']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【肺部听诊（多选）】：'+this.data2_1.join(','));
+           };
+           if(this.data2_2.length!=0){
+             mydata.push('【并发症（多选）】：'+this.data2_2.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -3038,6 +3108,11 @@
            mydata.push(this.datalist[this.data1_9-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',')+'&'+this.data2_2.join(',');
+            console.log(mydata);
+           return mydata;
           }
         },
         methods:{clearall10(){
@@ -3050,10 +3125,14 @@
             this.data1_7='';
             this.data1_8='';
             this.data1_9='';
+            this.data2_1=[];
+            this.data2_2=[];
           }
         },
         updated:function() {
           this.$emit('mysend10',this.data,this.data_binary);
+          this.$emit('mysend10_d',this.data2);
+
         }
       },
        //第11个模板
@@ -3161,6 +3240,9 @@
            mydata.push('因哮喘住院频次 : '+this.datalist[this.data1_4-1]['因哮喘住院频次']);};
            if(this.data1_5!=0){
            mydata.push('治疗情况 : '+this.datalist[this.data1_5-1]['治疗情况']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【肺部听诊（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -3178,6 +3260,11 @@
            mydata.push(this.datalist[this.data1_5-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
+           return mydata;
           }
         },
         methods:{clearall13(){
@@ -3186,10 +3273,12 @@
             this.data1_3='';
             this.data1_4='';
             this.data1_5='';
+            this.data2_1=[];
           }
         },
         updated:function() {
           this.$emit('mysend13',this.data,this.data_binary);
+          this.$emit('mysend13_d',this.data2);
         }
       },
        //第14个模板
@@ -3267,6 +3356,9 @@
            mydata.push('服药时间 : '+this.datalist[this.data1_1-1]['服药时间']);};
            if(this.data1_2!=0){
            mydata.push('剂量和频次 : '+this.datalist[this.data1_2-1]['剂量和频次']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【用药途径（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -3277,6 +3369,11 @@
            if(this.data1_2!=0){
            mydata.push(this.datalist[this.data1_2-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
+           return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
            return mydata;
           }
         },
@@ -3291,6 +3388,7 @@
         },
         updated:function() {
           this.$emit('mysend15',this.data,this.data_binary);
+          this.$emit('mysend15_d',this.data2);
         }
       },
       //第16个模板
@@ -3326,6 +3424,9 @@
            mydata.push('每日尿量:'+this.datalist[this.data1_4-1]['每日尿量']);};
            if(this.data1_5!=0){
            mydata.push('近期是否急性加重或伴有急性肾损伤:'+this.datalist[this.data1_5-1]['近期是否急性加重或伴有急性肾损伤']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【并发症（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -3343,6 +3444,11 @@
            mydata.push(this.datalist[this.data1_5-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
+           return mydata;
           }
         },
         methods:{clearall16(){
@@ -3356,6 +3462,8 @@
         },
         updated:function() {
           this.$emit('mysend16',this.data,this.data_binary);
+          this.$emit('mysend16_d',this.data2);
+
         }
       },
       //第17个模板
@@ -3423,6 +3531,9 @@
            mydata.push('并发症:'+this.datalist[this.data1_3-1]['并发症']);};
            if(this.data1_4!=0){
            mydata.push('治疗情况:'+this.datalist[this.data1_4-1]['治疗情况']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【并发症（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -3438,6 +3549,11 @@
            mydata.push(this.datalist[this.data1_4-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
+           return mydata;
           }
         },
         methods:{clearall18(){
@@ -3445,10 +3561,12 @@
             this.data1_2=0;
             this.data1_3=0;
             this.data1_4=0;
+            this.data2_1=[];
           }
         },
         updated:function() {
           this.$emit('mysend18',this.data,this.data_binary);
+          this.$emit('mysend18_d',this.data2);
         }
       },
       //第19个模板
@@ -3514,6 +3632,9 @@
            mydata.push('是否痊愈:'+this.datalist[this.data1_1-1]['是否痊愈']);};
            if(this.data1_2!=0){
            mydata.push('Clild分级:'+this.datalist[this.data1_2-1]['Clild分级']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【并发症（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -3525,17 +3646,22 @@
            mydata.push(this.datalist[this.data1_2-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
+           return mydata;
           }
         },
         methods:{clearall20(){
             this.data1_1=0;
             this.data1_2=0;
             this.data2_1=[];
-
           }
         },
         updated:function() {
           this.$emit('mysend20',this.data,this.data_binary);
+          this.$emit('mysend20_d',this.data2);
         }
       },
       //第21个模板
@@ -3699,6 +3825,12 @@
            mydata.push('发生时间:'+this.datalist[this.data1_1-1]['发生时间']);};
            if(this.data1_2!=0){
            mydata.push('类型:'+this.datalist[this.data1_2-1]['类型']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【并存疾病（多选）】：'+this.data2_1.join(','));
+           };
+           if(this.data2_2.length!=0){
+             mydata.push('【后遗症（多选）】：'+this.data2_2.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -3709,6 +3841,11 @@
            if(this.data1_2!=0){
            mydata.push(this.datalist[this.data1_2-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
+           return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',')+'&'+this.data2_2.join(',');
+            console.log(mydata);
            return mydata;
           }
         },
@@ -3721,6 +3858,7 @@
         },
         updated:function() {
           this.$emit('mysend24',this.data,this.data_binary);
+          this.$emit('mysend24_d',this.data2);
         }
       },
       //第25个模板
@@ -3854,6 +3992,9 @@
            mydata.push('是否治疗:'+this.datalist[this.data1_2-1]['是否治疗']);};
            if(this.data1_3!=0){
            mydata.push('病情是否稳定:'+this.datalist[this.data1_3-1]['病情是否稳定']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【临床表现（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -3867,6 +4008,11 @@
            mydata.push(this.datalist[this.data1_3-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
+           return mydata;
           }
         },
         methods:{clearall27(){
@@ -3878,6 +4024,7 @@
         },
         updated:function() {
           this.$emit('mysend27',this.data,this.data_binary);
+          this.$emit('mysend27_d',this.data2);
         }
       },
       //第28个模板
@@ -3977,6 +4124,9 @@
            mydata.push('尿糖:'+this.datalist[this.data1_6-1]['尿糖']);};
            if(this.data1_7!=0){
            mydata.push('尿酮体:'+this.datalist[this.data1_7-1]['尿酮体']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【并发症（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -3998,6 +4148,11 @@
            mydata.push(this.datalist[this.data1_7-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
+           return mydata;
           }
         },
         methods:{clearall29(){
@@ -4013,6 +4168,7 @@
         },
         updated:function() {
           this.$emit('mysend29',this.data,this.data_binary);
+          this.$emit('mysend29_d',this.data2);
         }
       },
       //第30个模板
@@ -4042,6 +4198,12 @@
            mydata.push('治疗情况:'+this.datalist[this.data1_2-1]['治疗情况']);};
            if(this.data1_3!=0){
            mydata.push('甲功:'+this.datalist[this.data1_3-1]['甲功']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【并发症（多选）】：'+this.data2_1.join(','));
+           };
+           if(this.data2_2.length!=0){
+             mydata.push('【治疗后并发症（多选）】：'+this.data2_2.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -4055,6 +4217,11 @@
            mydata.push(this.datalist[this.data1_3-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',')+'&'+this.data2_2.join(',');
+            console.log(mydata);
+           return mydata;
           }
         },
         methods:{clearall30(){
@@ -4067,6 +4234,7 @@
         },
         updated:function() {
           this.$emit('mysend30',this.data,this.data_binary);
+          this.$emit('mysend30_d',this.data2);
         }
       },
       //第31个模板
@@ -4154,6 +4322,9 @@
            mydata.push('术前血压:'+this.datalist[this.data1_3-1]['术前血压']);};
            if(this.data1_4!=0){
            mydata.push('术前高血压血糖电解质异常是否纠正:'+this.datalist[this.data1_4-1]['术前高血压血糖电解质异常是否纠正']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【临床表现（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -4169,6 +4340,11 @@
            mydata.push(this.datalist[this.data1_4-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
+           return mydata;
           }
         },
         methods:{clearall32(){
@@ -4182,6 +4358,8 @@
         },
         updated:function() {
           this.$emit('mysend32',this.data,this.data_binary);
+          this.$emit('mysend32_d',this.data2);
+
         }
       },
       //第33个模板
@@ -4211,6 +4389,12 @@
            mydata.push('用力肺活量:'+this.datalist[this.data1_1-1]['用力肺活量']);};
            if(this.data1_1!=0){
            mydata.push('既往肌无力危象:'+this.datalist[this.data1_1-1]['既往肌无力危象']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【临床表现（多选）】：'+this.data2_1.join(','));
+           };
+           if(this.data2_2.length!=0){
+             mydata.push('【治疗（多选）】：'+this.data2_2.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -4224,6 +4408,11 @@
            mydata.push(this.datalist[this.data1_3-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',')+'&'+this.data2_2.join(',');
+            console.log(mydata);
+           return mydata;
           }
         },
         methods:{clearall33(){
@@ -4236,6 +4425,7 @@
         },
         updated:function() {
           this.$emit('mysend33',this.data,this.data_binary);
+          this.$emit('mysend33_d',this.data2);
         }
       },
       //第34个模板
@@ -4305,6 +4495,9 @@
            mydata.push('颞下颌关节:'+this.datalist[this.data1_1-1]['颞下颌关节']);};
            if(this.data1_2!=0){
            mydata.push('颈椎关节:'+this.datalist[this.data1_2-1]['颈椎关节']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【颞下颌关节（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -4316,15 +4509,23 @@
            mydata.push(this.datalist[this.data1_2-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
+           return mydata;
           }
         },
         methods:{clearall35(){
             this.data1_1=0;         
             this.data1_2=0;
+            this.data2_1=[];
           }
         },
         updated:function() {
           this.$emit('mysend35',this.data,this.data_binary);
+          this.$emit('mysend35_d',this.data2);
+
         }
       },
       //第36个模板
@@ -4622,6 +4823,9 @@
            var mydata=new Array();
            if(this.data1_1!=0){
            mydata.push('临床表现:'+this.datalist[this.data1_1-1]['临床表现']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【临床表现（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -4631,14 +4835,22 @@
            mydata.push(this.datalist[this.data1_1-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
+           return mydata;
           }
         },
         methods:{clearall42(){
             this.data1_1=0;
+            this.data2_1=[];
           }
         },
         updated:function() {
           this.$emit('mysend42',this.data,this.data_binary);
+          this.$emit('mysend42_d',this.data2);
+
         }
       },
       //第43个模板
@@ -4738,14 +4950,20 @@
         computed: {
           data: function () {
            var mydata=new Array();
+           if(this.data2_1.length!=0){
+             mydata.push('【临床表现（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
           data_binary:function(){
             var mydata=new Array();
-           if(this.data1_1!=0){
-           mydata.push(this.datalist[this.data1_1-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
+           return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
            return mydata;
           }
         },
@@ -4756,6 +4974,7 @@
         },
         updated:function() {
           this.$emit('mysend45',this.data,this.data_binary);
+          this.$emit('mysend45_d',this.data2);
         }
       },
       //第46个模板
@@ -4804,29 +5023,28 @@
         template: '#maygm2temp',
         data() {
           return {
-            data1_1: 0,
             data2_1:[],
             data3_1:'',
-            datalist: [
-            { value: 1, 月经量:'正常'},      
-            { value: 2, 月经量:'偏多',},      
-            { value: 3, 月经量:'很多',},      
-            ],
+            datalist: [],
           }
         },
         computed: {
           data: function () {
            var mydata=new Array();
-           if(this.data1_1!=0){
-           mydata.push('月经量:'+this.datalist[this.data1_1-1]['月经量']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【临床表现（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
           data_binary:function(){
             var mydata=new Array();
-           if(this.data1_1!=0){
-           mydata.push(this.datalist[this.data1_1-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
+           return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
            return mydata;
           }
         },
@@ -4837,6 +5055,7 @@
         },
         updated:function() {
           this.$emit('mysend47',this.data,this.data_binary);
+          this.$emit('mysend47_d',this.data2);
         }
       },
       //第48个模板
@@ -4960,6 +5179,9 @@
            mydata.push('剂量和频次:'+this.datalist[this.data1_1-1]['剂量和频次']);};
            if(this.data1_2!=0){
            mydata.push('服药时间:'+this.datalist[this.data1_2-1]['服药时间']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【药物名称（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -4971,14 +5193,21 @@
            mydata.push(this.datalist[this.data1_2-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
+           return mydata;
           }
         },
         methods:{clearall50(){
             this.data1_1=0;
+            this.data2_1=[];
           }
         },
         updated:function() {
           this.$emit('mysend50',this.data,this.data_binary);
+          this.$emit('mysend50_d',this.data2);
         }
       },
       //第51个模板
@@ -5001,6 +5230,9 @@
            var mydata=new Array();
            if(this.data1_1!=0){
            mydata.push('服药时间:'+this.datalist[this.data1_1-1]['服药时间']);};
+           if(this.data2_1.length!=0){
+             mydata.push('【药物名称（多选）】：'+this.data2_1.join(','));
+           };
            console.log(mydata);
            return mydata;
           },
@@ -5009,6 +5241,11 @@
            if(this.data1_1!=0){
            mydata.push(this.datalist[this.data1_1-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
+           return mydata;
+          },
+          data2:function(){
+            var mydata=this.data2_1.join(',');
+            console.log(mydata);
            return mydata;
           }
         },
@@ -5019,6 +5256,7 @@
         },
         updated:function() {
           this.$emit('mysend51',this.data,this.data_binary);
+          this.$emit('mysend51_d',this.data2);
         }
       },
       // 数据结尾
@@ -5044,6 +5282,22 @@
           console.log(resp.data);
           // 成功后的数据显示
           this.basic1='姓名：'+resp.data.patientLv1.name;
+          this.basic2='科室：'+resp.data.patientLv1.department;
+          this.basic3='住院号：'+resp.data.patientLv1.patient_number_lv1;
+          this.basic4='床号：'+resp.data.patientLv1.bed_number;
+          this.basic5='年龄：'+resp.data.patientLv1.age;
+          this.basic6='性别：'+resp.data.patientLv1.gender;
+          this.basic7='身高：'+resp.data.patientLv1.height;
+          this.basic8='体重：'+resp.data.patientLv1.weight;
+          this.basic9='B P：'+resp.data.patientLv1.sbp+'/'+resp.data.patientLv1.dbp;
+          this.basic10='R ：'+resp.data.patientLv1.r;
+          this.basic11='P ：'+resp.data.patientLv1.p;
+          this.basic12='T ：'+resp.data.patientLv1.t;
+          this.basic13='主诉：'+resp.data.patientLv1.chief_complaint;
+          this.basic14='术前诊断：'+resp.data.patientLv1.pre_diagnose;
+          this.basic15='拟施操作：'+resp.data.patientLv1.assume;
+          this.basic16='其他：'+resp.data.patientLv1.others;
+
           // 同步result_binary
           var res='';
           if(resp.data.result_binary!=undefined){ res=resp.data.result_binary};
@@ -5364,6 +5618,42 @@
       console.log('数据45'+data);
       console.log('数据45二进制'+data_binary);
     },
+    mysend46(data,data_binary){
+      this.data46 = data.join(' ');
+      this.data_binary46 = data_binary;
+      console.log('数据46'+data);
+      console.log('数据46二进制'+data_binary);
+    },
+    mysend47(data,data_binary){
+      this.data47 = data.join(' ');
+      this.data_binary47 = data_binary;
+      console.log('数据47'+data);
+      console.log('数据47二进制'+data_binary);
+    },
+    mysend48(data,data_binary){
+      this.data48 = data.join(' ');
+      this.data_binary48 = data_binary;
+      console.log('数据48'+data);
+      console.log('数据48二进制'+data_binary);
+    },
+    mysend49(data,data_binary){
+      this.data49 = data.join(' ');
+      this.data_binary49 = data_binary;
+      console.log('数据49'+data);
+      console.log('数据45二进制'+data_binary);
+    },
+    mysend50(data,data_binary){
+      this.data50 = data.join(' ');
+      this.data_binary50 = data_binary;
+      console.log('数据50'+data);
+      console.log('数据50二进制'+data_binary);
+    },
+    mysend51(data,data_binary){
+      this.data51 = data.join(' ');
+      this.data_binary51 = data_binary;
+      console.log('数据51'+data);
+      console.log('数据51二进制'+data_binary);
+    },
     mysend1_d(data2){
      this.data1_d=data2
      console.log('数据1多选为 '+data2);
@@ -5371,6 +5661,82 @@
     mysend3_d(data2){
      this.data3_d=data2
      console.log('数据3多选为 '+data2);
+    },
+    mysend5_d(data2){
+     this.data5_d=data2
+     console.log('数据5多选为 '+data2);
+    },
+    mysend10_d(data2){
+     this.data10_d=data2
+     console.log('数据10多选为 '+data2);
+    },
+    mysend13_d(data2){
+     this.data13_d=data2
+     console.log('数据13多选为 '+data2);
+    },
+    mysend15_d(data2){
+     this.data13_d=data2
+     console.log('数据13多选为 '+data2);
+    },
+    mysend16_d(data2){
+     this.data16_d=data2
+     console.log('数据16多选为 '+data2);
+    },
+    mysend18_d(data2){
+     this.data18_d=data2
+     console.log('数据18多选为 '+data2);
+    },
+    mysend20_d(data2){
+     this.data20_d=data2
+     console.log('数据20多选为 '+data2);
+    },
+    mysend24_d(data2){
+     this.data24_d=data2
+     console.log('数据24多选为 '+data2);
+    },
+    mysend27_d(data2){
+     this.data27_d=data2
+     console.log('数据27多选为 '+data2);
+    },
+    mysend29_d(data2){
+     this.data29_d=data2
+     console.log('数据29多选为 '+data2);
+    },
+    mysend30_d(data2){
+     this.data30_d=data2
+     console.log('数据30多选为 '+data2);
+    },
+    mysend32_d(data2){
+     this.data32_d=data2
+     console.log('数据32多选为 '+data2);
+    },
+    mysend33_d(data2){
+     this.data33_d=data2
+     console.log('数据33多选为 '+data2);
+    },
+    mysend35_d(data2){
+     this.data35_d=data2
+     console.log('数据35多选为 '+data2);
+    },
+    mysend42_d(data2){
+     this.data42_d=data2
+     console.log('数据42多选为 '+data2);
+    },
+    mysend45_d(data2){
+     this.data45_d=data2
+     console.log('数据45多选为 '+data2);
+    },
+    mysend47_d(data2){
+     this.data47_d=data2
+     console.log('数据47多选为 '+data2);
+    },
+    mysend50_d(data2){
+     this.data50_d=data2
+     console.log('数据50多选为 '+data2);
+    },
+    mysend51_d(data2){
+     this.data51_d=data2
+     console.log('数据51多选为 '+data2);
     },
       useChildFun1: function () {
         this.flag = 'xt';
@@ -5641,6 +6007,42 @@
         this.flag = 'maygm';
         this.$nextTick(function () {
           footvue.$refs.child.clearall45();
+        });
+      },
+      useChildFun46: function () {
+        this.flag = 'jwsss';
+        this.$nextTick(function () {
+          footvue.$refs.child.clearall46();
+        });
+      },
+      useChildFun47: function () {
+        this.flag = 'maygm2';
+        this.$nextTick(function () {
+          footvue.$refs.child.clearall47();
+        });
+      },
+      useChildFun48: function () {
+        this.flag = 'exgr';
+        this.$nextTick(function () {
+          footvue.$refs.child.clearall48();
+        });
+      },
+      useChildFun49: function () {
+        this.flag = 'js';
+        this.$nextTick(function () {
+          footvue.$refs.child.clearall49();
+        });
+      },
+      useChildFun50: function () {
+        this.flag = 'kny';
+        this.$nextTick(function () {
+          footvue.$refs.child.clearall50();
+        });
+      },
+      useChildFun51: function () {
+        this.flag = 'jyy';
+        this.$nextTick(function () {
+          footvue.$refs.child.clearall51();
         });
       },
       useChildFun9_1: function () {
