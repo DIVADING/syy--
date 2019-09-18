@@ -2131,68 +2131,7 @@
       data_binary50:'',
       data51:'',
       data_binary51:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
-      // data1:'',
-      // data_binary1:'',
+     
       // 声明多选变量
       data1_d:[],
       data3_d:[],
@@ -5329,328 +5268,375 @@
         }).then(resp =>{
          alert('上传成功');
         });
-        this.$http.jsonp('http://47.93.56.186:8080/syy_sqwz/patient/insertPatientLv2', {
+        this.$http.jsonp('http://47.93.56.186:8080/syy_sqwz/patient/updatePatientLv2', {
           params: {
             patient_number_lv2: this.username_real,
-            represent:'data1',
-            checkbox_binary:this.data_binary1,
+            data1:this.data_binary1,
+            data2:this.data_binary2,
+            data3:this.data_binary3,
+            data4:this.data_binary4,
+            data5:this.data_binary5,
+            data6:this.data_binary6,
+            data7:this.data_binary7,
+            data8:this.data_binary8,
+            data9:this.data_binary9,
+            data10:this.data_binary10,
+            data11:this.data_binary11,
+            data12:this.data_binary12,
+            data13:this.data_binary13,
+            data14:this.data_binary14,
+            data15:this.data_binary15,
+            data16:this.data_binary16,
+            data17:this.data_binary17,
+            data18:this.data_binary18,
+            data19:this.data_binary19,
+            data20:this.data_binary20,
+            data21:this.data_binary21,
+            data22:this.data_binary22,
+            data23:this.data_binary23,
+            data24:this.data_binary24,
+            data25:this.data_binary25,
+            data26:this.data_binary26,
+            data27:this.data_binary27,
+            data28:this.data_binary28,
+            data29:this.data_binary29,
+            data30:this.data_binary30,
+            data31:this.data_binary31,
+            data32:this.data_binary32,
+            data33:this.data_binary33,
+            data34:this.data_binary34,
+            data35:this.data_binary35,
+            data36:this.data_binary36,
+            data37:this.data_binary37,
+            data38:this.data_binary38,
+            data39:this.data_binary39,
+            data40:this.data_binary40,
+            data41:this.data_binary41,
+            data42:this.data_binary42,
+            data43:this.data_binary43,
+            data44:this.data_binary44,
+            data45:this.data_binary45,
+            data46:this.data_binary46,
+            data47:this.data_binary47,
+            data48:this.data_binary48,
+            data49:this.data_binary49,
+            data50:this.data_binary50,
+
           },
           jsonp: 'jsoncallback',
         }).then(resp =>{
-         alert('上传成功');
-        }).catch(error=>{
-          alert('上传成功');
+         alert('上传二级表成功');
         });
       },
        mysend1(data,data_binary){
       this.data1 = data.join(' ');
-      this.data_binary1 = data_binary;
+      this.data_binary1 = data_binary.join('');
       console.log('数据1'+data);
       console.log('数据1二进制'+data_binary);
     },
     mysend2(data,data_binary){
       this.data2 = data.join(' ');
-      this.data_binary2 = data_binary;
+      this.data_binary2 = data_binary.join('');
       console.log('数据2'+data);
       console.log('数据2二进制'+data_binary);
     },
     mysend3(data,data_binary){
       this.data3 = data.join(' ');
-      this.data_binary3 = data_binary;
+      this.data_binary3 = data_binary.join('');
       console.log('数据3'+data);
       console.log('数据3二进制'+data_binary);
     },
     mysend4(data,data_binary){
       this.data4 = data.join(' ');
-      this.data_binary4 = data_binary;
+      this.data_binary4 = data_binary.join('');
       console.log('数据4'+data);
       console.log('数据4二进制'+data_binary);
     },
     mysend5(data,data_binary){
       this.data5 = data.join(' ');
-      this.data_binary5 = data_binary;
+      this.data_binary5 = data_binary.join('');
       console.log('数据5'+data);
       console.log('数据5二进制'+data_binary);
     },
     mysend6(data,data_binary){
       this.data6 = data.join(' ');
-      this.data_binary6 = data_binary;
+      this.data_binary6 = data_binary.join('');
       console.log('数据6'+data);
       console.log('数据6二进制'+data_binary);
     },
     mysend7(data,data_binary){
       this.data7 = data.join(' ');
-      this.data_binary7 = data_binary;
+      this.data_binary7 = data_binary.join('');
       console.log('数据7'+data);
       console.log('数据7二进制'+data_binary);
     },
     mysend8(data,data_binary){
       this.data8 = data.join(' ');
-      this.data_binary8 = data_binary;
+      this.data_binary8 = data_binary.join('');
       console.log('数据8'+data);
       console.log('数据8二进制'+data_binary);
     },
     mysend9(data,data_binary){
       this.data9 = data.join(' ');
-      this.data_binary9 = data_binary;
+      this.data_binary9 = data_binary.join('');
       console.log('数据9'+data);
       console.log('数据9二进制'+data_binary);
     },
     mysend9_1(data,data_binary){
       this.data9_1 = data.join(' ');
-      this.data_binary9_1 = data_binary;
+      this.data_binary9_1 = data_binary.join('');
       console.log('数据9_1'+data);
       console.log('数据9_1二进制'+data_binary);
     },
     mysend10(data,data_binary){
       this.data10 = data.join(' ');
-      this.data_binary10 = data_binary;
+      this.data_binary10 = data_binary.join('');
       console.log('数据10'+data);
       console.log('数据10二进制'+data_binary);
     },
     mysend11(data,data_binary){
       this.data11 = data.join(' ');
-      this.data_binary11 = data_binary;
+      this.data_binary11 = data_binary.join('');
       console.log('数据11'+data);
       console.log('数据11二进制'+data_binary);
     },
     mysend12(data,data_binary){
       this.data12 = data.join(' ');
-      this.data_binary12 = data_binary;
+      this.data_binary12 = data_binary.join('');
       console.log('数据12'+data);
       console.log('数据12二进制'+data_binary);
     },
     mysend13(data,data_binary){
       this.data13 = data.join(' ');
-      this.data_binary13 = data_binary;
+      this.data_binary13 = data_binary.join('');
       console.log('数据13'+data);
       console.log('数据13二进制'+data_binary);
     },
     mysend14(data,data_binary){
       this.data14 = data.join(' ');
-      this.data_binary14 = data_binary;
+      this.data_binary14 = data_binary.join('');
       console.log('数据14'+data);
       console.log('数据14二进制'+data_binary);
     },
     mysend15(data,data_binary){
       this.data15 = data.join(' ');
-      this.data_binary15 = data_binary;
+      this.data_binary15 = data_binary.join('');
       console.log('数据15'+data);
       console.log('数据15二进制'+data_binary);
     },
     mysend16(data,data_binary){
       this.data16 = data.join(' ');
-      this.data_binary16 = data_binary;
+      this.data_binary16 = data_binary.join('');
       console.log('数据16'+data);
       console.log('数据16二进制'+data_binary);
     },
     mysend17(data,data_binary){
       this.data17 = data.join(' ');
-      this.data_binary17 = data_binary;
+      this.data_binary17 = data_binary.join('');
       console.log('数据17'+data);
       console.log('数据17二进制'+data_binary);
     },
     mysend18(data,data_binary){
       this.data18 = data.join(' ');
-      this.data_binary18 = data_binary;
+      this.data_binary18 = data_binary.join('');
       console.log('数据18'+data);
       console.log('数据18二进制'+data_binary);
     },
     mysend19(data,data_binary){
       this.data19 = data.join(' ');
-      this.data_binary19 = data_binary;
+      this.data_binary19 = data_binary.join('');
       console.log('数据19'+data);
       console.log('数据19二进制'+data_binary);
     },
     mysend20(data,data_binary){
       this.data20 = data.join(' ');
-      this.data_binary20 = data_binary;
+      this.data_binary20 = data_binary.join('');
       console.log('数据20'+data);
       console.log('数据20二进制'+data_binary);
     },
     mysend21(data,data_binary){
       this.data21 = data.join(' ');
-      this.data_binary21 = data_binary;
+      this.data_binary21 = data_binary.join('');
       console.log('数据21'+data);
       console.log('数据21二进制'+data_binary);
     },
     mysend22(data,data_binary){
       this.data22 = data.join(' ');
-      this.data_binary22 = data_binary;
+      this.data_binary22 = data_binary.join('');
       console.log('数据22'+data);
       console.log('数据22二进制'+data_binary);
     },
     mysend23(data,data_binary){
       this.data23 = data.join(' ');
-      this.data_binary23 = data_binary;
+      this.data_binary23 = data_binary.join('');
       console.log('数据23'+data);
       console.log('数据23二进制'+data_binary);
     },
     mysend24(data,data_binary){
       this.data24 = data.join(' ');
-      this.data_binary24 = data_binary;
+      this.data_binary24 = data_binary.join('');
       console.log('数据24'+data);
       console.log('数据24二进制'+data_binary);
     },
     mysend25(data,data_binary){
       this.data25 = data.join(' ');
-      this.data_binary25 = data_binary;
+      this.data_binary25 = data_binary.join('');
       console.log('数据25'+data);
       console.log('数据25二进制'+data_binary);
     },
     mysend26(data,data_binary){
       this.data26 = data.join(' ');
-      this.data_binary26 = data_binary;
+      this.data_binary26 = data_binary.join('');
       console.log('数据26'+data);
       console.log('数据26二进制'+data_binary);
     },
     mysend27(data,data_binary){
       this.data27 = data.join(' ');
-      this.data_binary27 = data_binary;
+      this.data_binary27 = data_binary.join('');
       console.log('数据27'+data);
       console.log('数据27二进制'+data_binary);
     },
     mysend28(data,data_binary){
       this.data28 = data.join(' ');
-      this.data_binary28 = data_binary;
+      this.data_binary28 = data_binary.join('');
       console.log('数据28'+data);
       console.log('数据28二进制'+data_binary);
     },
     mysend29(data,data_binary){
       this.data29 = data.join(' ');
-      this.data_binary29 = data_binary;
+      this.data_binary29 = data_binary.join('');
       console.log('数据29'+data);
       console.log('数据29二进制'+data_binary);
     },
     mysend30(data,data_binary){
       this.data30 = data.join(' ');
-      this.data_binary30 = data_binary;
+      this.data_binary30 = data_binary.join('');
       console.log('数据30'+data);
       console.log('数据30二进制'+data_binary);
     },
     mysend31(data,data_binary){
       this.data31 = data.join(' ');
-      this.data_binary31 = data_binary;
+      this.data_binary31 = data_binary.join('');
       console.log('数据31'+data);
       console.log('数据31二进制'+data_binary);
     },
     mysend32(data,data_binary){
       this.data32 = data.join(' ');
-      this.data_binary32 = data_binary;
+      this.data_binary32 = data_binary.join('');
       console.log('数据32'+data);
       console.log('数据32二进制'+data_binary);
     },
     mysend33(data,data_binary){
       this.data33 = data.join(' ');
-      this.data_binary33 = data_binary;
+      this.data_binary33 = data_binary.join('');
       console.log('数据33'+data);
       console.log('数据33二进制'+data_binary);
     },
     mysend34(data,data_binary){
       this.data34 = data.join(' ');
-      this.data_binary34 = data_binary;
+      this.data_binary34 = data_binary.join('');
       console.log('数据34'+data);
       console.log('数据34二进制'+data_binary);
     },
     mysend35(data,data_binary){
       this.data35 = data.join(' ');
-      this.data_binary35 = data_binary;
+      this.data_binary35 = data_binary.join('');
       console.log('数据35'+data);
       console.log('数据35二进制'+data_binary);
     },
     mysend36(data,data_binary){
       this.data36 = data.join(' ');
-      this.data_binary36 = data_binary;
+      this.data_binary36 = data_binary.join('');
       console.log('数据36'+data);
       console.log('数据36二进制'+data_binary);
     },
     mysend37(data,data_binary){
       this.data37 = data.join(' ');
-      this.data_binary37 = data_binary;
+      this.data_binary37 = data_binary.join('');
       console.log('数据37'+data);
       console.log('数据37二进制'+data_binary);
     },
     mysend38(data,data_binary){
       this.data38 = data.join(' ');
-      this.data_binary38 = data_binary;
+      this.data_binary38 = data_binary.join('');
       console.log('数据38'+data);
       console.log('数据38二进制'+data_binary);
     },
     mysend39(data,data_binary){
       this.data39 = data.join(' ');
-      this.data_binary39 = data_binary;
+      this.data_binary39 = data_binary.join('');
       console.log('数据39'+data);
       console.log('数据39二进制'+data_binary);
     },
     mysend40(data,data_binary){
       this.data40 = data.join(' ');
-      this.data_binary40 = data_binary;
+      this.data_binary40 = data_binary.join('');
       console.log('数据40'+data);
       console.log('数据40二进制'+data_binary);
     },
     mysend41(data,data_binary){
       this.data41 = data.join(' ');
-      this.data_binary41 = data_binary;
+      this.data_binary41 = data_binary.join('');
       console.log('数据41'+data);
       console.log('数据41二进制'+data_binary);
     },
     mysend42(data,data_binary){
       this.data42 = data.join(' ');
-      this.data_binary42 = data_binary;
+      this.data_binary42 = data_binary.join('');
       console.log('数据42'+data);
       console.log('数据42二进制'+data_binary);
     },
     mysend43(data,data_binary){
       this.data43 = data.join(' ');
-      this.data_binary43 = data_binary;
+      this.data_binary43 = data_binary.join('');
       console.log('数据43'+data);
       console.log('数据43二进制'+data_binary);
     },
     mysend44(data,data_binary){
       this.data44 = data.join(' ');
-      this.data_binary44 = data_binary;
+      this.data_binary44 = data_binary.join('');
       console.log('数据44'+data);
       console.log('数据44二进制'+data_binary);
     },
     mysend45(data,data_binary){
       this.data45 = data.join(' ');
-      this.data_binary45 = data_binary;
+      this.data_binary45 = data_binary.join('');
       console.log('数据45'+data);
       console.log('数据45二进制'+data_binary);
     },
     mysend46(data,data_binary){
       this.data46 = data.join(' ');
-      this.data_binary46 = data_binary;
+      this.data_binary46 = data_binary.join('');
       console.log('数据46'+data);
       console.log('数据46二进制'+data_binary);
     },
     mysend47(data,data_binary){
       this.data47 = data.join(' ');
-      this.data_binary47 = data_binary;
+      this.data_binary47 = data_binary.join('');
       console.log('数据47'+data);
       console.log('数据47二进制'+data_binary);
     },
     mysend48(data,data_binary){
       this.data48 = data.join(' ');
-      this.data_binary48 = data_binary;
+      this.data_binary48 = data_binary.join('');
       console.log('数据48'+data);
       console.log('数据48二进制'+data_binary);
     },
     mysend49(data,data_binary){
       this.data49 = data.join(' ');
-      this.data_binary49 = data_binary;
+      this.data_binary49 = data_binary.join('');
       console.log('数据49'+data);
       console.log('数据45二进制'+data_binary);
     },
     mysend50(data,data_binary){
       this.data50 = data.join(' ');
-      this.data_binary50 = data_binary;
+      this.data_binary50 = data_binary.join('');
       console.log('数据50'+data);
       console.log('数据50二进制'+data_binary);
     },
     mysend51(data,data_binary){
       this.data51 = data.join(' ');
-      this.data_binary51 = data_binary;
+      this.data_binary51 = data_binary.join('');
       console.log('数据51'+data);
       console.log('数据51二进制'+data_binary);
     },
