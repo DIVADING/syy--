@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="./data.js">
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
@@ -392,8 +391,10 @@
   </div>
   </td>
   <td style='width:60%'>
-    <div></div><el-tag type="primary" v-if="data36&&data36.length !== 0"closable @close="useChildFun36()">{{data36}}</el-tag>
-    <div></div><el-tag type="primary" v-if="data37&&data37.length !== 0"closable @close="useChildFun37()">{{data37}}</el-tag>
+    <div v-if="data36&&data36.length !== 0">精神分裂症</div>
+    <el-tag type="primary" v-if="data36&&data36.length !== 0"closable @close="useChildFun36()">{{data36}}</el-tag>
+    <div v-if="data37&&data37.length !== 0">抑郁症</div>
+    <el-tag type="primary" v-if="data37&&data37.length !== 0"closable @close="useChildFun37()">{{data37}}</el-tag>
   </td>
 </tr>
 <tr style="height: 10px"><td></td></tr>
@@ -406,7 +407,8 @@
   </div>
   </td>
   <td style='width:60%'>
-    <div></div><el-tag type="info" v-if="data38&&data38.length !== 0"closable @close="useChildFun38()">{{data38}}</el-tag>
+    <div v-if="data38&&data38.length !== 0">妊娠</div>
+    <el-tag type="info" v-if="data38&&data38.length !== 0"closable @close="useChildFun38()">{{data38}}</el-tag>
 
   </td>
 </tr>
@@ -420,9 +422,12 @@
   </div>
   </td>
   <td style='width:60%'>
-    <div></div><el-tag type="primary" v-if="data39&&data39.length !== 0"closable @close="useChildFun39()">{{data39}}</el-tag>
-    <div></div><el-tag type="primary" v-if="data40&&data40.length !== 0"closable @close="useChildFun40()">{{data40}}</el-tag>
-    <div></div><el-tag type="primary" v-if="data41&&data41.length !== 0"closable @close="useChildFun41()">{{data41}}</el-tag>
+    <div v-if="data39&&data39.length !== 0">吸烟</div>
+    <el-tag type="primary" v-if="data39&&data39.length !== 0"closable @close="useChildFun39()">{{data39}}</el-tag>
+    <div v-if="data40&&data40.length !== 0">嗜酒</div>
+    <el-tag type="primary" v-if="data40&&data40.length !== 0"closable @close="useChildFun40()">{{data40}}</el-tag>
+    <div v-if="data41&&data41.length !== 0">药物成瘾</div>
+    <el-tag type="primary" v-if="data41&&data41.length !== 0"closable @close="useChildFun41()">{{data41}}</el-tag>
 
   </td>
 </tr>
@@ -436,8 +441,10 @@
   </div>
   </td>
   <td style='width:60%'>
-    <div></div><el-tag type="info" v-if="data42&&data42.length !== 0"closable @close="useChildFun42()">{{data42}}</el-tag>
-    <div></div><el-tag type="info" v-if="data43&&data43.length !== 0"closable @close="useChildFun43()">{{data43}}</el-tag>
+    <div v-if="data42&&data42.length !== 0">药物过敏</div>
+    <el-tag type="info" v-if="data42&&data42.length !== 0"closable @close="useChildFun42()">{{data42}}</el-tag>
+    <div v-if="data43&&data43.length !== 0">药名</div>
+    <el-tag type="info" v-if="data43&&data43.length !== 0"closable @close="useChildFun43()">{{data43}}</el-tag>
 
   </td>
 </tr>
@@ -451,9 +458,12 @@
   </div>
   </td>
   <td style='width:60%'>
-    <div></div><el-tag type="primary" v-if="data44&&data44.length !== 0"closable @close="useChildFun44()">{{data44}}</el-tag>
-    <div></div><el-tag type="primary" v-if="data45&&data45.length !== 0"closable @close="useChildFun45()">{{data45}}</el-tag>
-    <div></div><el-tag type="primary" v-if="data46&&data46.length !== 0"closable @close="useChildFun46()">{{data46}}</el-tag>
+    <div v-if="data44&&data44.length !== 0">插管困难</div>
+    <el-tag type="primary" v-if="data44&&data44.length !== 0"closable @close="useChildFun44()">{{data44}}</el-tag>
+    <div v-if="data45&&data45.length !== 0">麻醉药过敏</div>
+    <el-tag type="primary" v-if="data45&&data45.length !== 0"closable @close="useChildFun45()">{{data45}}</el-tag>
+    <div v-if="data46&&data46.length !== 0">既往手术史</div>
+    <el-tag type="primary" v-if="data46&&data46.length !== 0"closable @close="useChildFun46()">{{data46}}</el-tag>
  
   </td>
 </tr>
@@ -467,8 +477,10 @@
   </div>
   </td>
   <td style='width:60%'>
-    <div></div><el-tag type="info" v-if="data47&&data47.length !== 0"closable @close="useChildFun47()">{{data47}}</el-tag>
-    <div></div><el-tag type="info" v-if="data48&&data48.length !== 0"closable @close="useChildFun48()">{{data48}}</el-tag>
+    <div v-if="data47&&data47.length !== 0">麻醉药过敏</div>
+    <el-tag type="info" v-if="data47&&data47.length !== 0"closable @close="useChildFun47()">{{data47}}</el-tag>
+    <div v-if="data48&&data48.length !== 0">恶性高热</div>
+    <el-tag type="info" v-if="data48&&data48.length !== 0"closable @close="useChildFun48()">{{data48}}</el-tag>
   </td>
 </tr>
 <tr style="height: 10px"><td></td></tr>
@@ -481,9 +493,12 @@
   </div>
   </td>
   <td style='width:60%'>
-    <div></div><el-tag type="primary" v-if="data49&&data49.length !== 0"closable @close="useChildFun49()">{{data49}}</el-tag>
-    <div></div><el-tag type="primary" v-if="data50&&data50.length !== 0"closable @close="useChildFun50()">{{data50}}</el-tag>
-    <div></div><el-tag type="primary" v-if="data51&&data51.length !== 0"closable @close="useChildFun51()">{{data51}}</el-tag>
+    <div v-if="data49&&data49.length !== 0">激素</div>
+    <el-tag type="primary" v-if="data49&&data49.length !== 0"closable @close="useChildFun49()">{{data49}}</el-tag>
+    <div v-if="data50&&data50.length !== 0">抗凝药</div>
+    <el-tag type="primary" v-if="data50&&data50.length !== 0"closable @close="useChildFun50()">{{data50}}</el-tag>
+    <div v-if="data51&&data51.length !== 0">降压药</div>
+    <el-tag type="primary" v-if="data51&&data51.length !== 0"closable @close="useChildFun51()">{{data51}}</el-tag>
   </td>
 </tr>
 </table>
@@ -1809,7 +1824,7 @@
     </div>
   </div>
 </template>
-<template id="xytemp">
+<template id="xy2temp">
   <div>
     <div>时间:<el-radio-group v-model="data1_1">
         <el-radio border v-for='item in datalist ' :label="item.value" v-if='item.时间' :key="item.value">{{item.时间}}
@@ -5259,16 +5274,18 @@
       },
       //上传
       submit() {
-        this.$http.jsonp('http://47.93.56.186:8080/syy_sqwz/patient/updatePatientLv1', {
+        this.$http.jsonp("http://47.93.56.186:8080/syy_sqwz/patient/updatePatientLv1", {
           params: {
             patient_number_lv1: this.username_real,
             result_binary:this.result_binary,
           },
-          jsonp: 'jsoncallback',
+          jsonp: "jsoncallback",
         }).then(resp =>{
-         alert('上传成功');
+         console.log(resp);
+        }).catch(resp =>{
+          console.log(resp);
         });
-        this.$http.jsonp('http://47.93.56.186:8080/syy_sqwz/patient/updatePatientLv2', {
+        this.$http.jsonp("http://47.93.56.186:8080/syy_sqwz/patient/updatePatientLv2", {
           params: {
             patient_number_lv2: this.username_real,
             data1:this.data_binary1,
@@ -5323,9 +5340,11 @@
             data50:this.data_binary50,
 
           },
-          jsonp: 'jsoncallback',
+          jsonp: "jsoncallback",
         }).then(resp =>{
-         alert('上传二级表成功');
+         alert("上传二级表成功");
+        }).catch(resp =>{
+         alert("传二级表失败");
         });
       },
        mysend1(data,data_binary){
