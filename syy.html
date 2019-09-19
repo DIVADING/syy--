@@ -5281,9 +5281,9 @@
           },
           jsonp: "jsoncallback",
         }).then(resp =>{
-         console.log(resp);
+        alert("基础信息提交成功")
         }).catch(resp =>{
-          console.log(resp);
+          alert("基础信息提交失败")
         });
         this.$http.jsonp("http://47.93.56.186:8080/syy_sqwz/patient/updatePatientLv2", {
           params: {
@@ -5342,9 +5342,9 @@
           },
           jsonp: "jsoncallback",
         }).then(resp =>{
-         alert("上传二级表成功");
+          alert("二级信息提交成功")
         }).catch(resp =>{
-         alert("传二级表失败");
+          alert("二级信息提交失败")
         });
       },
        mysend1(data,data_binary){
