@@ -2040,7 +2040,7 @@
       height:'',weight:'',
       sbp:'',dbp:'',r:'',p:'',t:'',
       pre_diagnose:'',assume:'',chief_complaint:'',others:'',
-
+      
       // 声明组件传量
       data1:'',
       data_binary1:'',
@@ -2170,6 +2170,16 @@
       data47_d:[],
       data50_d:[],
       data51_d:[],
+      //声明输入框变量
+      data15_i:'',
+      data32_i:'',
+      data41_i:'',
+      data43_i:'',
+      data45_i:'',
+      data47_i:'',
+      data48_i:'',
+      data49_i:'',
+      data50_i:'',
 
       // 声明其他变量
       username:'',
@@ -2694,13 +2704,13 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('病史 : '+this.datalist[this.data1_1-1]['病史']);};
+           mydata.push('【病史】 : '+this.datalist[this.data1_1-1]['病史']);};
            if(this.data1_2!=0){
-           mydata.push('控制情况 : '+this.datalist[this.data1_2-1]['控制情况']);};
+           mydata.push('【控制情况】 : '+this.datalist[this.data1_2-1]['控制情况']);};
            if(this.data1_3!=0){
-           mydata.push('是否服用利血平类药物 : '+this.datalist[this.data1_3-1]['是否服用利血平类药物']);};
+           mydata.push('【是否服用利血平类药物】 : '+this.datalist[this.data1_3-1]['是否服用利血平类药物']);};
            if(this.data1_4!=0){
-           mydata.push('是否服用可乐定类药物 : '+this.datalist[this.data1_4-1]['是否服用可乐定类药物']);};
+           mydata.push('【是否服用可乐定类药物】 : '+this.datalist[this.data1_4-1]['是否服用可乐定类药物']);};
            if(this.data2_1.length!=0){
              mydata.push('【靶器官受损（多选）】：'+this.data2_1.join(','));
            };
@@ -2761,13 +2771,13 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('病史 : '+this.datalist[this.data1_1-1]['病史']);};
+           mydata.push('【病史】 : '+this.datalist[this.data1_1-1]['病史']);};
            if(this.data1_2!=0){
-           mydata.push('治疗情况 : '+this.datalist[this.data1_2-1]['治疗情况']);};
+           mydata.push('【治疗情况】 : '+this.datalist[this.data1_2-1]['治疗情况']);};
            if(this.data1_3!=0){
-           mydata.push('是否仍有心绞痛发作 : '+this.datalist[this.data1_3-1]['是否仍有心绞痛发作']);};
+           mydata.push('【是否仍有心绞痛发作】 : '+this.datalist[this.data1_3-1]['是否仍有心绞痛发作']);};
            if(this.data1_4!=0){
-           mydata.push('目前心功能 : '+this.datalist[this.data1_4-1]['目前心功能']);};
+           mydata.push('【目前心功能】 : '+this.datalist[this.data1_4-1]['目前心功能']);};
            console.log(mydata);
            return mydata;
           },
@@ -2816,11 +2826,11 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('病史 : '+this.datalist[this.data1_1-1]['病史']);};
+           mydata.push('【病史】 : '+this.datalist[this.data1_1-1]['病史']);};
            if(this.data1_2!=0){
-           mydata.push('病因 : '+this.datalist[this.data1_2-1]['病因']);};
+           mydata.push('【病因】 : '+this.datalist[this.data1_2-1]['病因']);};
            if(this.data1_3!=0){
-           mydata.push('目前心功能 : '+this.datalist[this.data1_3-1]['目前心功能']);};
+           mydata.push('【目前心功能】 : '+this.datalist[this.data1_3-1]['目前心功能']);};
            console.log(mydata);
            return mydata;
           },
@@ -2867,11 +2877,11 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('病史 : '+this.datalist[this.data1_1-1]['病史']);};
+           mydata.push('【病史】 : '+this.datalist[this.data1_1-1]['病史']);};
            if(this.data1_2!=0){
-           mydata.push('病因 : '+this.datalist[this.data1_2-1]['病因']);};
+           mydata.push('【病因】 : '+this.datalist[this.data1_2-1]['病因']);};
            if(this.data1_3!=0){
-           mydata.push('目前心功能 : '+this.datalist[this.data1_3-1]['目前心功能']);};
+           mydata.push('【目前心功能】 : '+this.datalist[this.data1_3-1]['目前心功能']);};
            console.log(mydata);
            return mydata;
           },
@@ -2917,11 +2927,11 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('时间 : '+this.datalist[this.data1_1-1]['时间']);};
+           mydata.push('【时间】 : '+this.datalist[this.data1_1-1]['时间']);};
            if(this.data1_2!=0){
-           mydata.push('平均吸烟量 : '+this.datalist[this.data1_2-1]['平均吸烟量']);};
+           mydata.push('【平均吸烟量】 : '+this.datalist[this.data1_2-1]['平均吸烟量']);};
            if(this.data1_3!=0){
-           mydata.push('戒烟 : '+this.datalist[this.data1_3-1]['戒烟']);};
+           mydata.push('【戒烟】 : '+this.datalist[this.data1_3-1]['戒烟']);};
            console.log(mydata);
            return mydata;
           },
@@ -2964,7 +2974,7 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('戒烟 : '+this.datalist[this.data1_1-1]['戒烟']);};
+           mydata.push('【戒烟】 : '+this.datalist[this.data1_1-1]['戒烟']);};
            console.log(mydata);
            return mydata;
           },
@@ -3014,23 +3024,23 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('病史 : '+this.datalist[this.data1_1-1]['病史']);};
+           mydata.push('【病史】 : '+this.datalist[this.data1_1-1]['病史']);};
            if(this.data1_2!=0){
-           mydata.push('气流受限程度 : '+this.datalist[this.data1_2-1]['气流受限程度']);};
+           mydata.push('【气流受限程度】 : '+this.datalist[this.data1_2-1]['气流受限程度']);};
            if(this.data1_3!=0){
-           mydata.push('呼吸困难分级 : '+this.datalist[this.data1_3-1]['呼吸困难分级']);};
+           mydata.push('【呼吸困难分级】 : '+this.datalist[this.data1_3-1]['呼吸困难分级']);};
            if(this.data1_4!=0){
-           mydata.push('肺部听诊 : '+this.datalist[this.data1_4-1]['肺部听诊']);};
+           mydata.push('【肺部听诊】 : '+this.datalist[this.data1_4-1]['肺部听诊']);};
            if(this.data1_5!=0){
-           mydata.push('稳定期OR急性期 : '+this.datalist[this.data1_5-1]['稳定期OR急性期']);};
+           mydata.push('【稳定期OR急性期】 : '+this.datalist[this.data1_5-1]['稳定期OR急性期']);};
            if(this.data1_6!=0){
-           mydata.push('呼吸频率（次/分） : '+this.datalist[this.data1_6-1]['并发症']);};
+           mydata.push('【呼吸频率（次/分）】 : '+this.datalist[this.data1_6-1]['并发症']);};
            if(this.data1_7!=0){
-           mydata.push('治疗情况 : '+this.datalist[this.data1_7-1]['治疗情况']);};
+           mydata.push('【治疗情况 】: '+this.datalist[this.data1_7-1]['治疗情况']);};
            if(this.data1_8!=0){
-           mydata.push('因呼吸系统疾病住院频次 : '+this.datalist[this.data1_8-1]['因呼吸系统疾病住院频次']);};
+           mydata.push('【因呼吸系统疾病住院频次】 : '+this.datalist[this.data1_8-1]['因呼吸系统疾病住院频次']);};
            if(this.data1_9!=0){
-           mydata.push('动脉血气分析 : '+this.datalist[this.data1_9-1]['动脉血气分析']);};
+           mydata.push('【动脉血气分析】 : '+this.datalist[this.data1_9-1]['动脉血气分析']);};
            if(this.data2_1.length!=0){
              mydata.push('【肺部听诊（多选）】：'+this.data2_1.join(','));
            };
@@ -3105,7 +3115,7 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('是否痊愈 : '+this.datalist[this.data1_1-1]['是否痊愈']);};
+           mydata.push('【是否痊愈】 : '+this.datalist[this.data1_1-1]['是否痊愈']);};
            console.log(mydata);
            return mydata;
           },
@@ -3141,7 +3151,7 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('是否痊愈 : '+this.datalist[this.data1_1-1]['是否痊愈']);};
+           mydata.push('【是否痊愈】 : '+this.datalist[this.data1_1-1]['是否痊愈']);};
            console.log(mydata);
            return mydata;
           },
@@ -3166,18 +3176,18 @@
         template: '#xctemp',
         data() {
           return {
-            data1_1: '',
-            data1_2: '',
-            data1_3: '',
-            data1_4: '',
-            data1_5: '',
+            data1_1: 0,
+            data1_2: 0,
+            data1_3: 0,
+            data1_4: 0,
+            data1_5: 0,
             data2_1: [],
             datalist: [
-            { value: '1', 病史:'<5',哮喘发作频率:'少有发作',急性发作时程度:'否认急性期',因哮喘住院频次:'极少',治疗情况:'长期规范治疗',},      
-            { value: '2', 病史:'5-10',哮喘发作频率:'有时发作',急性发作时程度:'轻度（步行或上楼时气短）',因哮喘住院频次:'有时',治疗情况:'未治疗',},
-            { value: '3', 病史:'>10',哮喘发作频率:'有时发作',急性发作时程度:'中度（稍事活动感气短，讲话常中断）',因哮喘住院频次:'经常',治疗情况:'',},
-            { value: '4', 病史:'',哮喘发作频率:'每天发作',急性发作时程度:'重度（休息时感气短，端坐呼吸）',因哮喘住院频次:'总是',治疗情况:'',},
-            { value: '5', 病史:'',哮喘发作频率:'每天发作且近6个月有加重',急性发作时程度:'危重（不能讲话，嗜睡或意识模糊）',因哮喘住院频次:'',治疗情况:'',},
+            { value: 1, 病史:'<5',哮喘发作频率:'少有发作',急性发作时程度:'否认急性期',因哮喘住院频次:'极少',治疗情况:'长期规范治疗',},      
+            { value: 2, 病史:'5-10',哮喘发作频率:'有时发作',急性发作时程度:'轻度（步行或上楼时气短）',因哮喘住院频次:'有时',治疗情况:'未治疗',},
+            { value: 3, 病史:'>10',哮喘发作频率:'有时发作',急性发作时程度:'中度（稍事活动感气短，讲话常中断）',因哮喘住院频次:'经常',治疗情况:'',},
+            { value: 4, 病史:'',哮喘发作频率:'每天发作',急性发作时程度:'重度（休息时感气短，端坐呼吸）',因哮喘住院频次:'总是',治疗情况:'',},
+            { value: 5, 病史:'',哮喘发作频率:'每天发作且近6个月有加重',急性发作时程度:'危重（不能讲话，嗜睡或意识模糊）',因哮喘住院频次:'',治疗情况:'',},
             ],
           }
         },
@@ -3185,15 +3195,15 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('病史 : '+this.datalist[this.data1_1-1]['病史']);};
+           mydata.push('【病史】 : '+this.datalist[this.data1_1-1]['病史']);};
            if(this.data1_2!=0){
-           mydata.push('哮喘发作频率 : '+this.datalist[this.data1_2-1]['哮喘发作频率']);};
+           mydata.push('【哮喘发作频率】 : '+this.datalist[this.data1_2-1]['哮喘发作频率']);};
            if(this.data1_3!=0){
-           mydata.push('急性发作时程度 : '+this.datalist[this.data1_3-1]['急性发作时程度']);};
+           mydata.push('【急性发作时程度】 : '+this.datalist[this.data1_3-1]['急性发作时程度']);};
            if(this.data1_4!=0){
-           mydata.push('因哮喘住院频次 : '+this.datalist[this.data1_4-1]['因哮喘住院频次']);};
+           mydata.push('【因哮喘住院频次】 : '+this.datalist[this.data1_4-1]['因哮喘住院频次']);};
            if(this.data1_5!=0){
-           mydata.push('治疗情况 : '+this.datalist[this.data1_5-1]['治疗情况']);};
+           mydata.push('【治疗情况】 : '+this.datalist[this.data1_5-1]['治疗情况']);};
            if(this.data2_1.length!=0){
              mydata.push('【肺部听诊（多选）】：'+this.data2_1.join(','));
            };
@@ -3254,11 +3264,11 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('是否痊愈 : '+this.datalist[this.data1_1-1]['是否痊愈']);};
+           mydata.push('【是否痊愈】 : '+this.datalist[this.data1_1-1]['是否痊愈']);};
            if(this.data1_2!=0){
-           mydata.push('痰涂片 : '+this.datalist[this.data1_2-1]['痰涂片']);};
+           mydata.push('【痰涂片】 : '+this.datalist[this.data1_2-1]['痰涂片']);};
            if(this.data1_3!=0){
-           mydata.push('抗结核治疗 : '+this.datalist[this.data1_3-1]['抗结核治疗']);};
+           mydata.push('【抗结核治疗】 : '+this.datalist[this.data1_3-1]['抗结核治疗']);};
            console.log(mydata);
            return mydata;
           },
@@ -3289,29 +3299,37 @@
         template: '#zhztemp',
         data() {
           return {
-            data1_1: '',
-            data1_2: '',
+            data1_1: 0,
+            data1_2: 0,
             data2_1:[],
             data3_1:'',
             data3_2:'',
             data3_3:'',
             datalist: [
-            { value: '1', 服药时间:'<1年',剂量和频次:'Qd'},      
-            { value: '2', 服药时间:'1-5年',剂量和频次:'Bid'},      
-            { value: '3', 服药时间:'5-10年',剂量和频次:'Tid'},      
-            { value: '4', 服药时间:'>10年',剂量和频次:''},      
+            { value: 1, 服药时间:'<1年',剂量和频次:'Qd'},      
+            { value: 2, 服药时间:'1-5年',剂量和频次:'Bid'},      
+            { value: 3, 服药时间:'5-10年',剂量和频次:'Tid'},      
+            { value: 4, 服药时间:'>10年',剂量和频次:''},      
             ],
           }
         },
         computed: {
           data: function () {
            var mydata=new Array();
-           if(this.data1_1!=0){
-           mydata.push('服药时间 : '+this.datalist[this.data1_1-1]['服药时间']);};
+           if(this.data3_1!=''||this.data3_2!=''){
+           mydata.push('【药物名称】:'+this.data3_1+','+this.data3_2);
+           };
+           if(this.data1_1!=0 ){
+           mydata.push('【服药时间】:'+this.datalist[this.data1_1-1]['服药时间']);
+           };
+           if(this.data3_3!=''){
+           mydata.push('【剂量和频次】:'+this.data3_3);
+           };
            if(this.data1_2!=0){
-           mydata.push('剂量和频次 : '+this.datalist[this.data1_2-1]['剂量和频次']);};
+           mydata.push('【剂量和频次】:'+this.datalist[this.data1_2-1]['剂量和频次']);};
            if(this.data2_1.length!=0){
-             mydata.push('【用药途径（多选）】：'+this.data2_1.join(','));
+             mydata.push('【用药途径（多选）】：'+this.data2_1.join(','))
+             ;
            };
            console.log(mydata);
            return mydata;
@@ -3329,7 +3347,12 @@
             var mydata=this.data2_1.join(',');
             console.log(mydata);
            return mydata;
-          }
+          },
+          data3:function(){
+            var mydata=this.data3_1+'|'+this.data3_2+'|'+this.data3_3;
+            console.log(mydata);
+           return mydata;
+          },
         },
         methods:{clearall15(){
             this.data1_1='';
@@ -3342,7 +3365,7 @@
         },
         updated:function() {
           this.$emit('mysend15',this.data,this.data_binary);
-          this.$emit('mysend15_d',this.data2);
+          this.$emit('mysend15_d',this.data2,this.data3);
         }
       },
       //第16个模板
@@ -3369,15 +3392,15 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('病因:'+this.datalist[this.data1_1-1]['病因']);};
+           mydata.push('【病因】:'+this.datalist[this.data1_1-1]['病因']);};
            if(this.data1_2!=0){
-           mydata.push('是否替代治疗:'+this.datalist[this.data1_2-1]['是否替代治疗']);};
+           mydata.push('【是否替代治疗】:'+this.datalist[this.data1_2-1]['是否替代治疗']);};
            if(this.data1_3!=0){
-           mydata.push('透析频次:'+this.datalist[this.data1_3-1]['透析频次']);};
+           mydata.push('【透析频次】:'+this.datalist[this.data1_3-1]['透析频次']);};
            if(this.data1_4!=0){
-           mydata.push('每日尿量:'+this.datalist[this.data1_4-1]['每日尿量']);};
+           mydata.push('【每日尿量】:'+this.datalist[this.data1_4-1]['每日尿量']);};
            if(this.data1_5!=0){
-           mydata.push('近期是否急性加重或伴有急性肾损伤:'+this.datalist[this.data1_5-1]['近期是否急性加重或伴有急性肾损伤']);};
+           mydata.push('【近期是否急性加重或伴有急性肾损伤】:'+this.datalist[this.data1_5-1]['近期是否急性加重或伴有急性肾损伤']);};
            if(this.data2_1.length!=0){
              mydata.push('【并发症（多选）】：'+this.data2_1.join(','));
            };
@@ -3436,7 +3459,7 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('是否痊愈:'+this.datalist[this.data1_1-1]['是否痊愈']);};
+           mydata.push('【是否痊愈】:'+this.datalist[this.data1_1-1]['是否痊愈']);};
            console.log(mydata);
            return mydata;
           },
@@ -3478,13 +3501,13 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('肌酐水平:'+this.datalist[this.data1_1-1]['肌酐水平']);};
+           mydata.push('【肌酐水平】:'+this.datalist[this.data1_1-1]['肌酐水平']);};
            if(this.data1_2!=0){
-           mydata.push('每日尿量:'+this.datalist[this.data1_2-1]['每日尿量']);};
+           mydata.push('【每日尿量】:'+this.datalist[this.data1_2-1]['每日尿量']);};
            if(this.data1_3!=0){
-           mydata.push('并发症:'+this.datalist[this.data1_3-1]['并发症']);};
+           mydata.push('【并发症】:'+this.datalist[this.data1_3-1]['并发症']);};
            if(this.data1_4!=0){
-           mydata.push('治疗情况:'+this.datalist[this.data1_4-1]['治疗情况']);};
+           mydata.push('【治疗情况】:'+this.datalist[this.data1_4-1]['治疗情况']);};
            if(this.data2_1.length!=0){
              mydata.push('【并发症（多选）】：'+this.data2_1.join(','));
            };
@@ -3540,7 +3563,7 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('月经量:'+this.datalist[this.data1_1-1]['月经量']);};
+           mydata.push('【月经量】:'+this.datalist[this.data1_1-1]['月经量']);};
            console.log(mydata);
            return mydata;
           },
@@ -3583,9 +3606,9 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('是否痊愈:'+this.datalist[this.data1_1-1]['是否痊愈']);};
+           mydata.push('【是否痊愈】:'+this.datalist[this.data1_1-1]['是否痊愈']);};
            if(this.data1_2!=0){
-           mydata.push('Clild分级:'+this.datalist[this.data1_2-1]['Clild分级']);};
+           mydata.push('【Clild分级】:'+this.datalist[this.data1_2-1]['Clild分级']);};
            if(this.data2_1.length!=0){
              mydata.push('【并发症（多选）】：'+this.data2_1.join(','));
            };
@@ -3636,9 +3659,9 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('治疗情况:'+this.datalist[this.data1_1-1]['治疗情况']);};
+           mydata.push('【治疗情况】:'+this.datalist[this.data1_1-1]['治疗情况']);};
            if(this.data1_2!=0){
-           mydata.push('是否痊愈:'+this.datalist[this.data1_2-1]['是否痊愈']);};
+           mydata.push('【是否痊愈】:'+this.datalist[this.data1_2-1]['是否痊愈']);};
            console.log(mydata);
            return mydata;
           },
@@ -3682,11 +3705,11 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('病因:'+this.datalist[this.data1_1-1]['病因']);};
+           mydata.push('【病因】:'+this.datalist[this.data1_1-1]['病因']);};
            if(this.data1_2!=0){
-           mydata.push('治疗情况:'+this.datalist[this.data1_2-1]['治疗情况']);};
+           mydata.push('【治疗情况】:'+this.datalist[this.data1_2-1]['治疗情况']);};
            if(this.data1_3!=0){
-           mydata.push('是否痊愈:'+this.datalist[this.data1_3-1]['是否痊愈']);};
+           mydata.push('【是否痊愈】:'+this.datalist[this.data1_3-1]['是否痊愈']);};
            console.log(mydata);
            return mydata;
           },
@@ -3730,7 +3753,7 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('是否痊愈:'+this.datalist[this.data1_1-1]['是否痊愈']);};
+           mydata.push('【是否痊愈】:'+this.datalist[this.data1_1-1]['是否痊愈']);};
            console.log(mydata);
            return mydata;
           },
@@ -3776,9 +3799,9 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('发生时间:'+this.datalist[this.data1_1-1]['发生时间']);};
+           mydata.push('【发生时间】:'+this.datalist[this.data1_1-1]['发生时间']);};
            if(this.data1_2!=0){
-           mydata.push('类型:'+this.datalist[this.data1_2-1]['类型']);};
+           mydata.push('【类型】:'+this.datalist[this.data1_2-1]['类型']);};
            if(this.data2_1.length!=0){
              mydata.push('【并存疾病（多选）】：'+this.data2_1.join(','));
            };
@@ -3835,11 +3858,11 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('发作频率:'+this.datalist[this.data1_1-1]['发作频率']);};
+           mydata.push('【发作频率】:'+this.datalist[this.data1_1-1]['发作频率']);};
            if(this.data1_2!=0){
-           mydata.push('是否治疗:'+this.datalist[this.data1_2-1]['是否治疗']);};
+           mydata.push('【是否治疗】:'+this.datalist[this.data1_2-1]['是否治疗']);};
            if(this.data1_3!=0){
-           mydata.push('是否痊愈:'+this.datalist[this.data1_3-1]['是否痊愈']);};
+           mydata.push('【是否痊愈】:'+this.datalist[this.data1_3-1]['是否痊愈']);};
            console.log(mydata);
            return mydata;
           },
@@ -3888,11 +3911,11 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('类型:'+this.datalist[this.data1_1-1]['类型']);};
+           mydata.push('【类型】:'+this.datalist[this.data1_1-1]['类型']);};
            if(this.data1_2!=0){
-           mydata.push('是否肌无力:'+this.datalist[this.data1_2-1]['是否肌无力']);};
+           mydata.push('【是否肌无力】:'+this.datalist[this.data1_2-1]['是否肌无力']);};
            if(this.data1_3!=0){
-           mydata.push('是否痊愈:'+this.datalist[this.data1_3-1]['是否痊愈']);};
+           mydata.push('【是否痊愈】:'+this.datalist[this.data1_3-1]['是否痊愈']);};
            console.log(mydata);
            return mydata;
           },
@@ -3941,11 +3964,11 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('分类:'+this.datalist[this.data1_1-1]['分类']);};
+           mydata.push('【分类】:'+this.datalist[this.data1_1-1]['分类']);};
            if(this.data1_2!=0){
-           mydata.push('是否治疗:'+this.datalist[this.data1_2-1]['是否治疗']);};
+           mydata.push('【是否治疗】:'+this.datalist[this.data1_2-1]['是否治疗']);};
            if(this.data1_3!=0){
-           mydata.push('病情是否稳定:'+this.datalist[this.data1_3-1]['病情是否稳定']);};
+           mydata.push('【病情是否稳定】:'+this.datalist[this.data1_3-1]['病情是否稳定']);};
            if(this.data2_1.length!=0){
              mydata.push('【临床表现（多选）】：'+this.data2_1.join(','));
            };
@@ -4005,13 +4028,13 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('严重程度:'+this.datalist[this.data1_1-1]['严重程度']);};
+           mydata.push('【严重程度】:'+this.datalist[this.data1_1-1]['严重程度']);};
            if(this.data1_2!=0){
-           mydata.push('贫血原因:'+this.datalist[this.data1_2-1]['贫血原因']);};
+           mydata.push('【贫血原因】:'+this.datalist[this.data1_2-1]['贫血原因']);};
            if(this.data1_3!=0){
-           mydata.push('是否治疗:'+this.datalist[this.data1_3-1]['是否治疗']);};
+           mydata.push('【是否治疗】:'+this.datalist[this.data1_3-1]['是否治疗']);};
            if(this.data1_4!=0){
-           mydata.push('是否痊愈:'+this.datalist[this.data1_4-1]['是否痊愈']);};
+           mydata.push('【是否痊愈】:'+this.datalist[this.data1_4-1]['是否痊愈']);};
            console.log(mydata);
            return mydata;
           },
@@ -4065,19 +4088,19 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('类型:'+this.datalist[this.data1_1-1]['类型']);};
+           mydata.push('【类型】:'+this.datalist[this.data1_1-1]['类型']);};
            if(this.data1_2!=0){
-           mydata.push('病程:'+this.datalist[this.data1_2-1]['病程']);};
+           mydata.push('【病程】:'+this.datalist[this.data1_2-1]['病程']);};
            if(this.data1_3!=0){
-           mydata.push('治疗情况:'+this.datalist[this.data1_3-1]['治疗情况']);};
+           mydata.push('【治疗情况】:'+this.datalist[this.data1_3-1]['治疗情况']);};
            if(this.data1_4!=0){
-           mydata.push('平素控制情况:'+this.datalist[this.data1_4-1]['平素控制情况']);};
+           mydata.push('【平素控制情况】:'+this.datalist[this.data1_4-1]['平素控制情况']);};
            if(this.data1_5!=0){
-           mydata.push('糖化血红蛋白:'+this.datalist[this.data1_5-1]['糖化血红蛋白']);};
+           mydata.push('【糖化血红蛋白】:'+this.datalist[this.data1_5-1]['糖化血红蛋白']);};
            if(this.data1_6!=0){
-           mydata.push('尿糖:'+this.datalist[this.data1_6-1]['尿糖']);};
+           mydata.push('【尿糖】:'+this.datalist[this.data1_6-1]['尿糖']);};
            if(this.data1_7!=0){
-           mydata.push('尿酮体:'+this.datalist[this.data1_7-1]['尿酮体']);};
+           mydata.push('【尿酮体】:'+this.datalist[this.data1_7-1]['尿酮体']);};
            if(this.data2_1.length!=0){
              mydata.push('【并发症（多选）】：'+this.data2_1.join(','));
            };
@@ -4147,11 +4170,11 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('病程:'+this.datalist[this.data1_1-1]['病程']);};
+           mydata.push('【病程】:'+this.datalist[this.data1_1-1]['病程']);};
            if(this.data1_2!=0){
-           mydata.push('治疗情况:'+this.datalist[this.data1_2-1]['治疗情况']);};
+           mydata.push('【治疗情况】:'+this.datalist[this.data1_2-1]['治疗情况']);};
            if(this.data1_3!=0){
-           mydata.push('甲功:'+this.datalist[this.data1_3-1]['甲功']);};
+           mydata.push('【甲功】:'+this.datalist[this.data1_3-1]['甲功']);};
            if(this.data2_1.length!=0){
              mydata.push('【并发症（多选）】：'+this.data2_1.join(','));
            };
@@ -4212,13 +4235,13 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('病程:'+this.datalist[this.data1_1-1]['病程']);};
+           mydata.push('【病程】:'+this.datalist[this.data1_1-1]['病程']);};
            if(this.data1_2!=0){
-           mydata.push('是否黏液性水肿:'+this.datalist[this.data1_2-1]['是否黏液性水肿']);};
+           mydata.push('【是否黏液性水肿】:'+this.datalist[this.data1_2-1]['是否黏液性水肿']);};
            if(this.data1_3!=0){
-           mydata.push('治疗情况:'+this.datalist[this.data1_3-1]['治疗情况']);};
+           mydata.push('【治疗情况】:'+this.datalist[this.data1_3-1]['治疗情况']);};
            if(this.data1_4!=0){
-           mydata.push('甲功:'+this.datalist[this.data1_4-1]['甲功']);};
+           mydata.push('【甲功】:'+this.datalist[this.data1_4-1]['甲功']);};
            console.log(mydata);
            return mydata;
           },
@@ -4269,13 +4292,15 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('类型:'+this.datalist[this.data1_1-1]['类型']);};
+           mydata.push('【类型】:'+this.datalist[this.data1_1-1]['类型']);};
+           if(this.data3_1.length!=0){
+           mydata.push('【大小】:'+this.data3_1);};
            if(this.data1_2!=0){
-           mydata.push('大小:'+this.datalist[this.data1_2-1]['大小']);};
+           mydata.push('【大小】:'+this.datalist[this.data1_2-1]['大小']);};
            if(this.data1_3!=0){
-           mydata.push('术前血压:'+this.datalist[this.data1_3-1]['术前血压']);};
+           mydata.push('【术前血压】:'+this.datalist[this.data1_3-1]['术前血压']);};
            if(this.data1_4!=0){
-           mydata.push('术前高血压血糖电解质异常是否纠正:'+this.datalist[this.data1_4-1]['术前高血压血糖电解质异常是否纠正']);};
+           mydata.push('【术前高血压血糖电解质异常是否纠正】:'+this.datalist[this.data1_4-1]['术前高血压血糖电解质异常是否纠正']);};
            if(this.data2_1.length!=0){
              mydata.push('【临床表现（多选）】：'+this.data2_1.join(','));
            };
@@ -4338,11 +4363,11 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('病程:'+this.datalist[this.data1_1-1]['病程']);};
+           mydata.push('【病程】:'+this.datalist[this.data1_1-1]['病程']);};
            if(this.data1_1!=0){
-           mydata.push('用力肺活量:'+this.datalist[this.data1_1-1]['用力肺活量']);};
+           mydata.push('【用力肺活量】:'+this.datalist[this.data1_1-1]['用力肺活量']);};
            if(this.data1_1!=0){
-           mydata.push('既往肌无力危象:'+this.datalist[this.data1_1-1]['既往肌无力危象']);};
+           mydata.push('【既往肌无力危象】:'+this.datalist[this.data1_1-1]['既往肌无力危象']);};
            if(this.data2_1.length!=0){
              mydata.push('【临床表现（多选）】：'+this.data2_1.join(','));
            };
@@ -4401,9 +4426,9 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('病程:'+this.datalist[this.data1_1-1]['病程']);};
+           mydata.push('【病程】:'+this.datalist[this.data1_1-1]['病程']);};
            if(this.data1_2!=0){
-           mydata.push('类型:'+this.datalist[this.data1_2-1]['类型']);};
+           mydata.push('【类型】:'+this.datalist[this.data1_2-1]['类型']);};
            console.log(mydata);
            return mydata;
           },
@@ -4446,9 +4471,9 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('颞下颌关节:'+this.datalist[this.data1_1-1]['颞下颌关节']);};
+           mydata.push('【颞下颌关节】:'+this.datalist[this.data1_1-1]['颞下颌关节']);};
            if(this.data1_2!=0){
-           mydata.push('颈椎关节:'+this.datalist[this.data1_2-1]['颈椎关节']);};
+           mydata.push('【颈椎关节】:'+this.datalist[this.data1_2-1]['颈椎关节']);};
            if(this.data2_1.length!=0){
              mydata.push('【颞下颌关节（多选）】：'+this.data2_1.join(','));
            };
@@ -4504,11 +4529,11 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('使用药物:'+this.datalist[this.data1_1-1]['使用药物']);};
+           mydata.push('【使用药物】:'+this.datalist[this.data1_1-1]['使用药物']);};
            if(this.data1_2!=0){
-           mydata.push('服药时间:'+this.datalist[this.data1_2-1]['服药时间']);};
+           mydata.push('【服药时间】:'+this.datalist[this.data1_2-1]['服药时间']);};
            if(this.data1_3!=0){
-           mydata.push('控制情况:'+this.datalist[this.data1_3-1]['控制情况']);};
+           mydata.push('【控制情况】:'+this.datalist[this.data1_3-1]['控制情况']);};
            console.log(mydata);
            return mydata;
           },
@@ -4557,11 +4582,11 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('使用药物:'+this.datalist[this.data1_1-1]['使用药物']);};
+           mydata.push('【使用药物】:'+this.datalist[this.data1_1-1]['使用药物']);};
            if(this.data1_2!=0){
-           mydata.push('服药时间:'+this.datalist[this.data1_2-1]['服药时间']);};
+           mydata.push('【服药时间】:'+this.datalist[this.data1_2-1]['服药时间']);};
            if(this.data1_3!=0){
-           mydata.push('控制情况:'+this.datalist[this.data1_3-1]['控制情况']);};
+           mydata.push('【控制情况】:'+this.datalist[this.data1_3-1]['控制情况']);};
            console.log(mydata);
            return mydata;
           },
@@ -4603,7 +4628,7 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('是否妊娠:'+this.datalist[this.data1_1-1]['是否妊娠']);};
+           mydata.push('【是否妊娠】:'+this.datalist[this.data1_1-1]['是否妊娠']);};
            console.log(mydata);
            return mydata;
           },
@@ -4642,9 +4667,9 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('时间:'+this.datalist[this.data1_1-1]['时间']);};
+           mydata.push('【时间】:'+this.datalist[this.data1_1-1]['时间']);};
            if(this.data1_2!=0){
-           mydata.push('平均吸烟量:'+this.datalist[this.data1_2-1]['平均吸烟量']);};
+           mydata.push('【平均吸烟量】:'+this.datalist[this.data1_2-1]['平均吸烟量']);};
            console.log(mydata);
            return mydata;
           },
@@ -4687,11 +4712,11 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('时间:'+this.datalist[this.data1_1-1]['时间']);};
+           mydata.push('【时间】:'+this.datalist[this.data1_1-1]['时间']);};
            if(this.data1_2!=0){
-           mydata.push('饮酒频次:'+this.datalist[this.data1_2-1]['饮酒频次']);};
+           mydata.push('【饮酒频次】:'+this.datalist[this.data1_2-1]['饮酒频次']);};
            if(this.data1_3!=0){
-           mydata.push('戒烟:'+this.datalist[this.data1_3-1]['戒烟']);};
+           mydata.push('【戒烟】:'+this.datalist[this.data1_3-1]['戒烟']);};
            console.log(mydata);
            return mydata;
           },
@@ -4735,8 +4760,10 @@
         computed: {
           data: function () {
            var mydata=new Array();
+           if(this.data3_1.length!=0){
+           mydata.push('【成瘾药物名称】:'+this.data3_1);};
            if(this.data1_1!=0){
-           mydata.push('服药时间:'+this.datalist[this.data1_1-1]['服药时间']);};
+           mydata.push('【服药时间】:'+this.datalist[this.data1_1-1]['服药时间']);};
            console.log(mydata);
            return mydata;
           },
@@ -4750,6 +4777,7 @@
         },
         methods:{clearall41(){
             this.data1_1=0;
+            this.data3_1='';
           }
         },
         updated:function() {
@@ -4776,7 +4804,7 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('临床表现:'+this.datalist[this.data1_1-1]['临床表现']);};
+           mydata.push('【临床表现】:'+this.datalist[this.data1_1-1]['临床表现']);};
            if(this.data2_1.length!=0){
              mydata.push('【临床表现（多选）】：'+this.data2_1.join(','));
            };
@@ -4820,8 +4848,8 @@
         computed: {
           data: function () {
            var mydata=new Array();
-           if(this.data1_1!=0){
-           mydata.push('药名:'+this.datalist[this.data1_1-1]['药名']);};
+           if(this.data3_1.length!=0){
+           mydata.push('【药名】:'+this.data3_1);};
            console.log(mydata);
            return mydata;
           },
@@ -4835,6 +4863,7 @@
         },
         methods:{clearall43(){
             this.data1_1=0;
+            this.data3_1='';
           }
         },
         updated:function() {
@@ -4860,11 +4889,11 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('是否面罩通气困难:'+this.datalist[this.data1_1-1]['是否面罩通气困难']);};
+           mydata.push('【是否面罩通气困难】:'+this.datalist[this.data1_1-1]['是否面罩通气困难']);};
            if(this.data1_2!=0){
-           mydata.push('是否成功进口插管:'+this.datalist[this.data1_2-1]['是否成功进口插管']);};
+           mydata.push('【是否成功进口插管】:'+this.datalist[this.data1_2-1]['是否成功进口插管']);};
            if(this.data1_3!=0){
-           mydata.push('是否行气管切开:'+this.datalist[this.data1_3-1]['是否行气管切开']);};
+           mydata.push('【是否行气管切开】:'+this.datalist[this.data1_3-1]['是否行气管切开']);};
            console.log(mydata);
            return mydata;
           },
@@ -4904,6 +4933,9 @@
         computed: {
           data: function () {
            var mydata=new Array();
+           if(this.data3_1.length!=0){
+            mydata.push('【药名】：'+this.data3_1)
+           };
            if(this.data2_1.length!=0){
              mydata.push('【临床表现（多选）】：'+this.data2_1.join(','));
            };
@@ -4950,7 +4982,7 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('月经量:'+this.datalist[this.data1_1-1]['月经量']);};
+           mydata.push('【月经量】:'+this.datalist[this.data1_1-1]['月经量']);};
            console.log(mydata);
            return mydata;
           },
@@ -4985,6 +5017,9 @@
         computed: {
           data: function () {
            var mydata=new Array();
+           if(this.data3_1.length!=0){
+            mydata.push('【药名】：'+this.data3_1)
+           };
            if(this.data2_1.length!=0){
              mydata.push('【临床表现（多选）】：'+this.data2_1.join(','));
            };
@@ -5005,6 +5040,7 @@
         methods:{clearall47(){
            this.data2_1=[];
            this.data3_1='';
+
           }
         },
         updated:function() {
@@ -5029,8 +5065,11 @@
         computed: {
           data: function () {
            var mydata=new Array();
+           if(this.data3_1.length!=0){
+            mydata.push('【亲属关系】：'+this.data3_1)
+           };
            if(this.data1_1!=0){
-           mydata.push('是否因恶性高热死亡:'+this.datalist[this.data1_1-1]['是否因恶性高热死亡']);};
+           mydata.push('【是否因恶性高热死亡】:'+this.datalist[this.data1_1-1]['是否因恶性高热死亡']);};
            console.log(mydata);
            return mydata;
           },
@@ -5044,6 +5083,7 @@
         },
         methods:{clearall48(){
             this.data1_1=0;
+            this.data3_1='';
           }
         },
         updated:function() {
@@ -5073,14 +5113,18 @@
         computed: {
           data: function () {
            var mydata=new Array();
+           
            if(this.data1_1!=0){
-           mydata.push('药物名称:'+this.datalist[this.data1_1-1]['药物名称']);};
+           mydata.push('【药物名称】:'+this.datalist[this.data1_1-1]['药物名称']);};
            if(this.data1_2!=0){
-           mydata.push('用药途径:'+this.datalist[this.data1_2-1]['用药途径']);};
+           mydata.push('【用药途径】:'+this.datalist[this.data1_2-1]['用药途径']);};
+           if(this.data3_1.length!=0){
+            mydata.push('【剂量和频次】：'+this.data3_1)
+           };
            if(this.data1_3!=0){
-           mydata.push('剂量和频次:'+this.datalist[this.data3_1-1]['剂量和频次']);};
+           mydata.push('【剂量和频次】:'+this.datalist[this.data3_1-1]['剂量和频次']);};
            if(this.data1_4!=0){
-           mydata.push('服药时间:'+this.datalist[this.data1_4-1]['服药时间']);};
+           mydata.push('【服药时间】:'+this.datalist[this.data1_4-1]['服药时间']);};
            console.log(mydata);
            return mydata;
           },
@@ -5103,6 +5147,7 @@
             this.data1_2=0;
             this.data1_3=0;
             this.data1_4=0;
+            this.data3_1='';
           }
         },
         updated:function() {
@@ -5129,10 +5174,13 @@
         computed: {
           data: function () {
            var mydata=new Array();
+           if(this.data3_1.length!=0){
+            mydata.push('【剂量和频次】：'+this.data3_1)
+           };
            if(this.data1_1!=0){
-           mydata.push('剂量和频次:'+this.datalist[this.data1_1-1]['剂量和频次']);};
+           mydata.push('【剂量和频次】:'+this.datalist[this.data1_1-1]['剂量和频次']);};
            if(this.data1_2!=0){
-           mydata.push('服药时间:'+this.datalist[this.data1_2-1]['服药时间']);};
+           mydata.push('【服药时间】:'+this.datalist[this.data1_2-1]['服药时间']);};
            if(this.data2_1.length!=0){
              mydata.push('【药物名称（多选）】：'+this.data2_1.join(','));
            };
@@ -5156,7 +5204,9 @@
         },
         methods:{clearall50(){
             this.data1_1=0;
+            this.data1_2=0;
             this.data2_1=[];
+            this.data3_1='';
           }
         },
         updated:function() {
@@ -5183,7 +5233,7 @@
           data: function () {
            var mydata=new Array();
            if(this.data1_1!=0){
-           mydata.push('服药时间:'+this.datalist[this.data1_1-1]['服药时间']);};
+           mydata.push('【服药时间】:'+this.datalist[this.data1_1-1]['服药时间']);};
            if(this.data2_1.length!=0){
              mydata.push('【药物名称（多选）】：'+this.data2_1.join(','));
            };
@@ -5679,9 +5729,12 @@
      this.data13_d=data2
      console.log('数据13多选为 '+data2);
     },
-    mysend15_d(data2){
-     this.data13_d=data2
-     console.log('数据13多选为 '+data2);
+    mysend15_d(data2,data3){
+     this.data15_d=data2;
+     this.data15_i=data3;
+     console.log('数据15多选为 '+data2);
+     console.log('数据15输入框为 '+data3);
+
     },
     mysend16_d(data2){
      this.data16_d=data2
