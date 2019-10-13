@@ -202,6 +202,11 @@
       @mysend49='mysend49'      
       @mysend50='mysend50'      @mysend50_d='mysend50_d'    
       @mysend51='mysend51'      @mysend51_d='mysend51_d'      
+      @mysend52='mysend52'
+      @mysend53='mysend53'
+      @mysend54='mysend54'
+      @mysend55='mysend55'
+      @mysend56='mysend56'
       ></component>
     </keep-alive>
 
@@ -499,6 +504,72 @@
     <el-tag type="primary" v-if="data50&&data50.length !== 0"closable @close="useChildFun50()">{{data50}}</el-tag>
     <div v-if="data51&&data51.length !== 0">降压药</div>
     <el-tag type="primary" v-if="data51&&data51.length !== 0"closable @close="useChildFun51()">{{data51}}</el-tag>
+  </td>
+</tr>
+<tr style="height: 10px"><td></td></tr>
+<tr>
+  <td style='width:10%'><el-button type="info" plain disabled style="width:150px">气道通畅度</el-button></td>
+  <td style='width:30%'>
+    <div style='display: inline-block;' v-for='item of items16'>
+    <el-button size="small" round @click="dialogVisible = true,flag=item.temp" style='width:100px'> {{item.system}}
+    </el-button>
+  </div>
+  </td>
+  <td style='width:60%'>
+    <div v-if="data52&&data52.length !== 0">气道通畅度</div>
+    <el-tag type="info" v-if="data52&&data52.length !== 0"closable @close="useChildFun52()">{{data52}}</el-tag>
+  </td>
+</tr>
+<tr>
+  <td style='width:10%'><el-button type="primary" plain disabled style="width:150px">牙齿</el-button></td>
+  <td style='width:30%'>
+    <div style='display: inline-block;' v-for='item of items17'>
+    <el-button size="small" round @click="dialogVisible = true,flag=item.temp" style='width:100px'> {{item.system}}
+    </el-button>
+  </div>
+  </td>
+  <td style='width:60%'>
+    <div v-if="data53&&data53.length !== 0">牙齿</div>
+    <el-tag type="primary" v-if="data53&&data53.length !== 0"closable @close="useChildFun53()">{{data53}}</el-tag>
+  </td>
+</tr>
+<tr>
+  <td style='width:10%'><el-button type="info" plain disabled style="width:150px">麻醉穿刺部位</el-button></td>
+  <td style='width:30%'>
+    <div style='display: inline-block;' v-for='item of items18'>
+    <el-button size="small" round @click="dialogVisible = true,flag=item.temp" style='width:100px'> {{item.system}}
+    </el-button>
+  </div>
+  </td>
+  <td style='width:60%'>
+    <div v-if="data54&&data54.length !== 0">麻醉穿刺部位</div>
+    <el-tag type="info" v-if="data54&&data54.length !== 0"closable @close="useChildFun54()">{{data54}}</el-tag>
+  </td>
+</tr>
+<tr>
+  <td style='width:10%'><el-button type="primary" plain disabled style="width:150px">胸部X片/彩超检查</el-button></td>
+  <td style='width:30%'>
+    <div style='display: inline-block;' v-for='item of items19'>
+    <el-button size="small" round @click="dialogVisible = true,flag=item.temp" style='width:100px'> {{item.system}}
+    </el-button>
+  </div>
+  </td>
+  <td style='width:60%'>
+    <div v-if="data55&&data55.length !== 0">胸部X片/彩超检查</div>
+    <el-tag type="primary" v-if="data55&&data55.length !== 0"closable @close="useChildFun55()">{{data55}}</el-tag>
+  </td>
+</tr>
+<tr>
+  <td style='width:10%'><el-button type="info" plain disabled style="width:150px">心电图</el-button></td>
+  <td style='width:30%'>
+    <div style='display: inline-block;' v-for='item of items20'>
+    <el-button size="small" round @click="dialogVisible = true,flag=item.temp" style='width:100px'> {{item.system}}
+    </el-button>
+  </div>
+  </td>
+  <td style='width:60%'>
+    <div v-if="data56&&data56.length !== 0">心电图</div>
+    <el-tag type="info" v-if="data56&&data56.length !== 0"closable @close="useChildFun56()">{{data56}}</el-tag>
   </td>
 </tr>
 </table>
@@ -2027,6 +2098,47 @@
     </div>
   </div>
 </template>
+<template id="qdtemp">
+  <div>
+    <div>气道通畅度: <el-radio-group v-model="data1_1">
+        <el-radio border v-for='item in datalist ' :label="item.value" v-if='item.data1' :key="item.value">{{item.data1}}
+        </el-radio>
+      </el-radio-group>
+    </div>
+    <div>Mallampati： <el-radio-group v-model="data1_2">
+      <el-radio border v-for='item in datalist ' :label="item.value" v-if='item.data2' :key="item.value">{{item.data2}}
+      </el-radio>
+    </el-radio-group>
+  </div>
+  </div>
+</template>
+<template id="yctemp">
+  <div>
+    <div>牙齿: <el-radio-group v-model="data1_1">
+        <el-radio border v-for='item in datalist ' :label="item.value" v-if='item.data1' :key="item.value">{{item.data1}}
+        </el-radio>
+      </el-radio-group>
+    </div>
+  </div>
+</template>
+<template id="mzcctemp">
+  <div>
+    <div>麻醉穿刺部位: <el-radio-group v-model="data1_1">
+        <el-radio border v-for='item in datalist ' :label="item.value" v-if='item.data1' :key="item.value">{{item.data1}}
+        </el-radio>
+      </el-radio-group>
+    </div>
+  </div>
+</template>
+<template id="xdttemp">
+  <div>
+    <div>心电图: <el-radio-group v-model="data1_1">
+        <el-radio border v-for='item in datalist ' :label="item.value" v-if='item.data1' :key="item.value">{{item.data1}}
+        </el-radio>
+      </el-radio-group>
+    </div>
+  </div>
+</template>
 <script>
   var footvue=new Vue({
     el:"#app",
@@ -2146,7 +2258,16 @@
       data_binary50:'',
       data51:'',
       data_binary51:'',
-     
+      data52:'',
+      data_binary52:'',
+      data53:'',
+      data_binary53:'',
+      data54:'',
+      data_binary54:'',
+      data55:'',
+      data_binary55:'',
+      data56:'',
+      data_binary56:'',
       // 声明多选变量
       data1_d:[],
       data3_d:[],
@@ -2337,7 +2458,21 @@
         { system: '抗凝药', temp: 'kny', },
         { system: '降压药', temp: 'jyy', },
       ],
-
+      items16: [
+        { system: '气道通畅度', temp: 'qd', },
+      ],
+      items17: [
+        { system: '牙齿', temp: 'yc', },
+      ],
+      items18: [
+        { system: '麻醉穿刺部位', temp: 'mzcc', },
+      ],
+      items19: [
+        { system: '胸部X片/彩超检查', temp: 'xp', },
+      ],
+      items20: [
+        { system: '心电图', temp: 'xdt', },
+      ],
       discussionoption: [{
         value: '1',
         label: '按计划安排检查手术'
@@ -2686,17 +2821,17 @@
         template: '#gxytemp',
         data() {
           return {
-            data1_1: '',
-            data1_2: '',
-            data1_3: '',
-            data1_4: '',
+            data1_1: 0,
+            data1_2: 0,
+            data1_3: 0,
+            data1_4: 0,
             data2_1: [],
             datalist: [
-              { value: '1', 病史: '<5', 控制情况: '良好',是否服用利血平类药物:'是',是否服用可乐定类药物:'是'},
-              { value: '2', 病史: '5-10', 控制情况: '一般', 是否服用利血平类药物:'否',是否服用可乐定类药物:'否'},
-              { value: '3', 病史: '>10', 控制情况: '差',是否服用利血平类药物:'',是否服用可乐定类药物:'' },
-              { value: '4', 病史: '', 控制情况: '未正规治疗',是否服用利血平类药物:'',是否服用可乐定类药物:''},
-              { value: '5', 病史: '', 控制情况: '',是否服用利血平类药物:'',是否服用可乐定类药物:'' },
+              { value: 1, 病史: '<5', 控制情况: '良好',是否服用利血平类药物:'是',是否服用可乐定类药物:'是'},
+              { value: 2, 病史: '5-10', 控制情况: '一般', 是否服用利血平类药物:'否',是否服用可乐定类药物:'否'},
+              { value: 3, 病史: '>10', 控制情况: '差',是否服用利血平类药物:'',是否服用可乐定类药物:'' },
+              { value: 4, 病史: '', 控制情况: '未正规治疗',是否服用利血平类药物:'',是否服用可乐定类药物:''},
+              { value: 5, 病史: '', 控制情况: '',是否服用利血平类药物:'',是否服用可乐定类药物:'' },
            ],
           }
         },
@@ -2737,10 +2872,10 @@
           }
         },
         methods:{clearall5(){
-            this.data1_1='';
-            this.data1_2='';
-            this.data1_3='';
-            this.data1_4='';
+            this.data1_1=0;
+            this.data1_2=0;
+            this.data1_3=0;
+            this.data1_4=0;
             this.data2_1=[];
           }
         },
@@ -5263,6 +5398,239 @@
           this.$emit('mysend51_d',this.data2);
         }
       },
+      //第52个模板
+      'qd':{
+        template: '#qdtemp',
+        data() {
+          return {
+            data1_1: 0,
+            data1_2: 0,
+            datalist: [
+            { value: 1, data1:'张口＜3',data2:'I'},      
+            { value: 2, data1:'鼾声',data2:'II'},      
+            { value: 3, data1:'颈短',data2:'III'},      
+            { value: 4, data1:'头后仰受限',data2:'IV'},      
+            { value: 5, data1:'喉结高',data2:''},      
+            { value: 6, data1:'小下颌',data2:''},      
+            { value: 7, data1:'气管移位',data2:''},      
+            { value: 8, data1:'气管压迫',data2:''},  
+            { value: 9, data1:'气管肿瘤',data2:''},  
+
+            ],
+          }
+        },
+        computed: {
+          data: function () {
+           var mydata=new Array();
+           if(this.data1_1!=0){
+           mydata.push('【气道通畅度】:'+this.datalist[this.data1_1-1]['data1']);};
+           if(this.data1_2!=0){
+             mydata.push('【Mallampati】：'+this.datalist[this.data1_2-1]['data2']);
+           };
+            console.log(mydata);
+            return mydata;
+          },
+          data_binary: function () {
+            var mydata = new Array();
+            if (this.data1_1 != 0) {
+              mydata.push(this.datalist[this.data1_1 - 1]['value']);
+            } else { mydata.push(0); };
+            if (this.data1_2 != 0) {
+              mydata.push(this.datalist[this.data1_2 - 1]['value']);
+            } else { mydata.push(0); };
+            console.log(mydata);
+            return mydata;
+          },
+
+        },
+        methods: {
+          clearall52() {
+            this.data1_1 = 0;
+            this.data1_2 = 0;
+          }
+        },
+        updated: function () {
+          this.$emit('mysend52', this.data, this.data_binary);
+        }
+      },
+      //第53个模板：牙齿
+      'yc': {
+        template: '#yctemp',
+        data() {
+          return {
+            data1_1: 0,
+            datalist: [
+              { value: 1, data1: '松动' },
+              { value: 2, data1: '缺失' },
+              { value: 3, data1: '戴冠' },
+              { value: 4, data1: '上牙' },
+              { value: 5, data1: '下牙' },
+              { value: 6, data1: '部分' },
+              { value: 7, data1: '全部' },
+            ],
+          }
+        },
+        computed: {
+          data: function () {
+            var mydata = new Array();
+            if (this.data1_1 != 0) {
+              mydata.push('【牙齿】:' + this.datalist[this.data1_1 - 1]['data1']);
+            };
+            console.log(mydata);
+            return mydata;
+          },
+          data_binary: function () {
+            var mydata = new Array();
+            if (this.data1_1 != 0) {
+              mydata.push(this.datalist[this.data1_1 - 1]['value']);
+            } else { mydata.push(0); };
+            console.log(mydata);
+            return mydata;
+          },
+
+        },
+        methods: {
+          clearall53() {
+            this.data1_1 = 0;
+          }
+        },
+        updated: function () {
+          this.$emit('mysend53', this.data, this.data_binary);
+        }
+      },
+      //第54个模板：麻醉穿刺部位
+      'mzcc': {
+        template: '#mzcctemp',
+        data() {
+          return {
+            data1_1: 0,
+            datalist: [
+              { value: 1, data1: '感染' },
+              { value: 2, data1: '畸形' },
+              { value: 3, data1: '外伤' },
+            ],
+          }
+        },
+        computed: {
+          data: function () {
+            var mydata = new Array();
+            if (this.data1_1 != 0) {
+              mydata.push('【麻醉穿刺部位】:' + this.datalist[this.data1_1 - 1]['data1']);
+            };
+            console.log(mydata);
+            return mydata;
+          },
+          data_binary: function () {
+            var mydata = new Array();
+            if (this.data1_1 != 0) {
+              mydata.push(this.datalist[this.data1_1 - 1]['value']);
+            } else { mydata.push(0); };
+            console.log(mydata);
+            return mydata;
+          },
+
+        },
+        methods: {
+          clearall54() {
+            this.data1_1 = 0;
+          }
+        },
+        updated: function () {
+          this.$emit('mysend54', this.data, this.data_binary);
+        }
+      },
+            //第55个模板：胸部X片/彩超检查
+      'xp': {
+        template: '#xptemp',
+        data() {
+          return {
+            data1_1: 0,
+            data1_2: 0,
+            data1_3: 0,
+            datalist: [
+            ],
+          }
+        },
+        computed: {
+        },
+        methods: {
+        }
+      },
+      //第56个模板：心电图
+      'xdt': {
+        template: '#xdttemp',
+        data() {
+          return {
+            data1_1: 0,
+            datalist: [
+              { value: 1, data1: '窦性心律' },
+              { value: 2, data1: '窦性心律不齐' },
+              { value: 3, data1: '窦缓' },
+              { value: 4, data1: '窦速' },
+              { value: 5, data1: '窦性停搏' },
+              { value: 6, data1: '房性逸博' },
+              { value: 7, data1: '交界性逸博' },
+              { value: 8, data1: '室性逸博' },
+              { value: 9, data1: '房早' },
+              { value: 10, data1: '交界性早搏' },
+              { value: 11, data1: '室早' },
+              { value: 12, data1: '房速' },
+              { value: 13, data1: '室上速' },
+              { value: 14, data1: '室速' },
+              { value: 15, data1: '房颤' },
+              { value: 16, data1: '室颤' },
+              { value: 17, data1: '窦房传导阻滞' },
+              { value: 18, data1: 'I房室传导阻滞' },
+              { value: 19, data1: 'II房室传导阻滞' },
+              { value: 20, data1: 'III房室传导阻滞' },
+              { value: 21, data1: '右束支阻滞' },
+              { value: 22, data1: '左束支阻滞' },
+              { value: 23, data1: '左前分支阻滞' },
+              { value: 24, data1: '左后分支阻滞' },
+              { value: 25, data1: '预激综合症' },
+              { value: 26, data1: '心房肥大' },
+              { value: 27, data1: '心室肥大' },
+              { value: 28, data1: 'PR间期延长' },
+              { value: 29, data1: '短PR' },
+              { value: 30, data1: '异常Q/QS波' },
+              { value: 31, data1: 'ST段压低' },
+              { value: 32, data1: 'ST段抬高' },
+              { value: 33, data1: 'ST-T改变' },
+              { value: 34, data1: '心梗' },
+              { value: 35, data1: 'T波改变(低平、倒置、高尖)' },
+            ],
+          }
+        },
+        computed: {
+          data: function () {
+            var mydata = new Array();
+            if (this.data1_1 != 0) {
+              mydata.push('【心电图】:' + this.datalist[this.data1_1 - 1]['data1']);
+            };
+            console.log(mydata);
+            return mydata;
+          },
+          data_binary: function () {
+            var mydata = new Array();
+            if (this.data1_1 != 0) {
+              mydata.push(this.datalist[this.data1_1 - 1]['value']);
+            } else { mydata.push(0); };
+            console.log(mydata);
+            return mydata;
+          },
+
+        },
+        methods: {
+          clearall56() {
+            this.data1_1 = 0;
+          }
+        },
+        updated: function () {
+          this.$emit('mysend56', this.data, this.data_binary);
+        }
+      },
+
+
       // 数据结尾
     },
     computed:{
@@ -5272,6 +5640,16 @@
         console.log(typeof(newresult));
         return newresult;
       },
+      result_mutichoice:function(){
+        result_mutichoice=this.data1_d+'#'+this.data3_d+'#'+this.data5_d+'#'+this.data10_d+'#'+this.data13_d+'#'+this.data15_d+'#'+this.data16_d+'#'+this.data18_d+'#'+this.data20_d+'#'+this.data24_d+'#'+this.data27_d+'#'+this.data29_d+'#'+this.data30_d+'#'+this.data32_d+'#'+this.data33_d+'#'+this.data35_d+'#'+this.data42_d+'#'+this.data45_d+'#'+this.data47_d+'#'+this.data50_d+'#'+this.data51_d;
+        console.log('最终多选数据：'+newresult);
+        return result_mutichoice;
+      },
+      result_input:function(){
+        result_input=this.data15_i+'#'
+        console.log('最终多选数据：'+result_input);
+        return result_input;
+      }
     },
     methods: {
       //登录
@@ -5388,7 +5766,7 @@
             data48:this.data_binary48,
             data49:this.data_binary49,
             data50:this.data_binary50,
-
+            data60:this.result_mutichoice,
           },
           jsonp: "jsoncallback",
         }).then(resp =>{
@@ -5708,6 +6086,36 @@
       this.data_binary51 = data_binary.join('');
       console.log('数据51'+data);
       console.log('数据51二进制'+data_binary);
+    },
+    mysend52(data,data_binary){
+      this.data52 = data.join(' ');
+      this.data_binary52 = data_binary.join('');
+      console.log('数据52'+data);
+      console.log('数据52二进制'+data_binary);
+    },
+    mysend53(data,data_binary){
+      this.data53 = data.join(' ');
+      this.data_binary53 = data_binary.join('');
+      console.log('数据53'+data);
+      console.log('数据53二进制'+data_binary);
+    },
+    mysend54(data,data_binary){
+      this.data54 = data.join(' ');
+      this.data_binary54 = data_binary.join('');
+      console.log('数据54'+data);
+      console.log('数据54二进制'+data_binary);
+    },
+    mysend55(data,data_binary){
+      this.data55= data.join(' ');
+      this.data_binary55 = data_binary.join('');
+      console.log('数据55'+data);
+      console.log('数据55二进制'+data_binary);
+    },
+    mysend56(data,data_binary){
+      this.data56 = data.join(' ');
+      this.data_binary56 = data_binary.join('');
+      console.log('数据56'+data);
+      console.log('数据56二进制'+data_binary);
     },
     mysend1_d(data2){
      this.data1_d=data2
@@ -6101,6 +6509,36 @@
         this.flag = 'jyy';
         this.$nextTick(function () {
           footvue.$refs.child.clearall51();
+        });
+      },
+      useChildFun52: function () {
+        this.flag = 'qd';
+        this.$nextTick(function () {
+          footvue.$refs.child.clearall52();
+        });
+      },
+      useChildFun53: function () {
+        this.flag = 'yc';
+        this.$nextTick(function () {
+          footvue.$refs.child.clearall53();
+        });
+      },
+      useChildFun54: function () {
+        this.flag = 'mzcc';
+        this.$nextTick(function () {
+          footvue.$refs.child.clearall54();
+        });
+      },
+      useChildFun55: function () {
+        this.flag = 'xp';
+        this.$nextTick(function () {
+          footvue.$refs.child.clearall55();
+        });
+      },
+      useChildFun56: function () {
+        this.flag = 'xdt';
+        this.$nextTick(function () {
+          footvue.$refs.child.clearall56();
         });
       },
       useChildFun9_1: function () {
