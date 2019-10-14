@@ -117,7 +117,7 @@
         
       <el-main v-if='username_real'>
 
-        <el-divider content-position="center">基本信息</el-divider>
+        <el-divider content-position="center">{{result_suggestion}}基本信息{{suggestion_get}}</el-divider>
         <el-row :gutter="1" style='text-align: left;font-size: 14px;color: #909399;line-height: 23px;vertical-align: middle;margin-bottom: 1px;'>
             <el-col :span="6"><div class="grid-content bg-purple basictabfont">{{basic1}}</div></el-col>
             <el-col :span="6"><div class="grid-content bg-purple basictabfont">{{basic2}}</div></el-col>
@@ -831,8 +831,18 @@
               <tr v-for='item in tableData2'>{{item}}</tr>
             </table>
           </div>
+          <el-divider content-position="center">麻醉建议</el-divider>
 
-
+         <div  style='width:1000px;margin:0 auto' align="center" border>
+         <div v-for='(user,i) in suggestion_get'>
+        
+         <el-tag
+         effect="danger" size=medium style="font-size:18px;margin-bottom: 6px;">
+         {{user.suggestion}}
+       </el-tag>
+        </div>
+         
+      </div>
 
           <el-table style='width:1000px;margin:0 auto' align="center" border :data="tableData2" width='949px'>
             <el-table-column prop="li1" label="NA" width="73px">
@@ -914,8 +924,10 @@
             </el-input>
           </div>
           <!-- 底部表单 -->
-<div class='footer'><el-button type="primary" @click='submit'>上传<i class="el-icon-upload el-icon--right"></i></el-button></div>
-                    
+<div class='footer'><el-button type="primary" @click='submit'>上传<i class="el-icon-upload el-icon--right"></i></el-button>
+  <el-button type="primary" @click='suggestion'>生成麻醉建议<i class="el-icon-upload el-icon--right"></i></el-button>
+</div>
+       
       </el-main>
 
     </el-container>
@@ -2152,7 +2164,8 @@
       height:'',weight:'',
       sbp:'',dbp:'',r:'',p:'',t:'',
       pre_diagnose:'',assume:'',chief_complaint:'',others:'',
-      
+      result_suggestion_get:'',
+      suggestion_get:[],
       // 声明组件传量
       data1:'',
       data_binary1:'',
@@ -2745,20 +2758,20 @@
         template: '#zytemp',
         data() {
           return {
-            data1_1: '',
-            data1_2: '',
-            data1_3: '',
-            data1_4: '',
-            data1_5: '',
-            data1_6: '',
-            data1_7: '',
+            data1_1: 0,
+            data1_2: 0,
+            data1_3: 0,
+            data1_4: 0,
+            data1_5: 0,
+            data1_6: 0,
+            data1_7: 0,
             datalist: [
-              { value: '1', 病史: '<5', 类型: '房缺', 肺动脉高压:'无',分流:'右向左',治疗情况:'未正规治疗',既往心衰病史:'是',心功能:'Ⅰ',},
-              { value: '2', 病史: '5-10', 类型: '室缺', 肺动脉高压:'轻度',分流:'左向右',治疗情况:'药物治疗',既往心衰病史:'否',心功能:'Ⅱ',},
-              { value: '3', 病史: '>10', 类型: '动脉导管未闭ASD',肺动脉高压:'中度',分流:'双向',治疗情况:'手术治疗',既往心衰病史:'',心功能:'Ⅲ', },
-              { value: '4', 病史: '', 类型: '法洛四联症', 肺动脉高压:'重度',分流:'',治疗情况:'',既往心衰病史:'',心功能:'Ⅳ',},
-              { value: '5', 病史: '', 类型: '主动脉缩窄',肺动脉高压:'',分流:'',治疗情况:'',既往心衰病史:'',心功能:'', },
-              { value: '6', 病史: '', 类型: '肺动脉狭窄', 肺动脉高压:'',分流:'',治疗情况:'',既往心衰病史:'',心功能:'',},
+              { value: 1, 病史: '<5', 类型: '房缺', 肺动脉高压:'无',分流:'右向左',治疗情况:'未正规治疗',既往心衰病史:'是',心功能:'Ⅰ',},
+              { value: 2, 病史: '5-10', 类型: '室缺', 肺动脉高压:'轻度',分流:'左向右',治疗情况:'药物治疗',既往心衰病史:'否',心功能:'Ⅱ',},
+              { value: 3, 病史: '>10', 类型: '动脉导管未闭ASD',肺动脉高压:'中度',分流:'双向',治疗情况:'手术治疗',既往心衰病史:'',心功能:'Ⅲ', },
+              { value: 4, 病史: '', 类型: '法洛四联症', 肺动脉高压:'重度',分流:'',治疗情况:'',既往心衰病史:'',心功能:'Ⅳ',},
+              { value: 5, 病史: '', 类型: '主动脉缩窄',肺动脉高压:'',分流:'',治疗情况:'',既往心衰病史:'',心功能:'', },
+              { value: 6, 病史: '', 类型: '肺动脉狭窄', 肺动脉高压:'',分流:'',治疗情况:'',既往心衰病史:'',心功能:'',},
             ],
           }
         },
@@ -2797,19 +2810,19 @@
            if(this.data1_6!=0){
            mydata.push(this.datalist[this.data1_6-1]['value']);}else{mydata.push(0);};
            if(this.data1_7!=0){
-           mydata.push(this.datalist[this.data1_6-1]['value']);}else{mydata.push(0);};
+           mydata.push(this.datalist[this.data1_7-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
           }
         },
         methods:{clearall4(){
-            this.data1_1='';
-            this.data1_2='';
-            this.data1_3='';
-            this.data1_4='';
-            this.data1_5='';
-            this.data1_6='';
-            this.data1_7='';
+            this.data1_1=0;
+            this.data1_2=0;
+            this.data1_3=0;
+            this.data1_4=0;
+            this.data1_5=0;
+            this.data1_6=0;
+            this.data1_7=0;
           }
         },
         updated:function() {
@@ -2924,6 +2937,8 @@
            mydata.push(this.datalist[this.data1_2-1]['value']);}else{mydata.push(0);};
            if(this.data1_3!=0){
            mydata.push(this.datalist[this.data1_3-1]['value']);}else{mydata.push(0);};
+           if(this.data1_4!=0){
+           mydata.push(this.datalist[this.data1_4-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
           }
@@ -5649,7 +5664,107 @@
         result_input=this.data15_i+'#'
         console.log('最终多选数据：'+result_input);
         return result_input;
-      }
+      },
+      result_suggestion:function(){
+        var result_suggestion = new Array();
+        if(this.data_binary1[0]==1 || this.data_binary1[0]==2)
+        {
+          result_suggestion.push('xiongA');
+        };
+        if(this.data_binary1[1]==1||this.data_binary1[2]==1||this.data_binary1[3]==1)
+        {
+          result_suggestion.push('xiongB');
+        };
+        if(this.data_binary1[4]==4)
+        {
+          result_suggestion.push('xiongC');
+        };
+        if(this.data_binary1[5]==4 || this.data_binary1[6]==4)
+        {
+          result_suggestion.push('xiongD');
+        };
+        if(this.data_binary1[7]==2)
+        {
+          result_suggestion.push('xiongE');
+        };
+        if(this.data_binary1[7]==3)
+        {
+          result_suggestion.push('xiongF');
+        };
+        if(this.data_binary2[0]==2)
+        {
+          result_suggestion.push('xinjiA');
+        };
+        if(this.data_binary2[0]==3)
+        {
+          result_suggestion.push('xinjiB');
+        };
+        if(this.data_binary2[0]==4)
+        {
+          result_suggestion.push('xinjiC');
+        };
+        if(this.data_binary3[3]==4)
+        {
+          result_suggestion.push('banA');
+        };
+        if(this.data_binary4[1]==4)
+        {
+          result_suggestion.push('zaA');
+        };
+        if(this.data_binary4[3]==1 || this.data_binary4[3]==3)
+        {
+          result_suggestion.push('zaC');
+        };
+        if(this.data_binary4[2]==4)
+        {
+          result_suggestion.push('zaD');
+        };
+        if(this.data_binary4[6]==4)
+        {
+          result_suggestion.push('zaE');
+        };
+        if(this.data_binary5[2]==2||this.data_binary5[2]==3||this.data_binary5[2]==4)
+        {
+          result_suggestion.push('gaoA');
+        };
+        if(this.data5_d!=[]&&this.data5_d.length!=0)
+        {
+          result_suggestion.push('gaoB');
+        };
+        if(this.data_binary5[2]==1)
+        {
+          result_suggestion.push('gaoC');
+        };
+        if(this.data_binary5[3]==1)
+        {
+          result_suggestion.push('gaoD');
+        };
+        if(this.data_binary6[0]==1||this.data_binary6[0]==2)
+        {
+          result_suggestion.push('xingengA');
+        };
+        if(this.data_binary6[1]==1||this.data_binary6[1]==2||this.data_binary6[1]==3)
+        {
+          result_suggestion.push('xingengB');
+        };
+        if(this.data_binary6[2]==4||this.data_binary6[2]==5)
+        {
+          result_suggestion.push('xingengC');
+        };
+        if(this.data_binary6[3]==3||this.data_binary6[3]==4)
+        {
+          result_suggestion.push('xingengD');
+        };
+        if(this.data_binary7[2]==4)
+        {
+          result_suggestion.push('yiA');
+        };
+        if(this.data_binary8[2]==4)
+        {
+          result_suggestion.push('qijinA');
+        };
+        return  result_suggestion;
+      },
     },
     methods: {
       //登录
@@ -5773,6 +5888,20 @@
           alert("二级信息提交成功")
         }).catch(resp =>{
           alert("二级信息提交失败")
+        });
+      },
+      suggestion(){
+        this.$http.jsonp("http://47.93.56.186:8080/syy_sqwz/patient/findSuggestion", {
+          params: {
+            suggestionIdList: this.result_suggestion.join(','),
+          },
+          jsonp: "jsoncallback",
+        }).then(resp =>{
+          // this.suggestion_get = resp.body.map((it) => {return it.suggestion});
+          this.suggestion_get=resp.body;
+        console.log(this.suggestion_get);
+        }).catch(resp =>{
+          alert("麻醉建议提交失败")
         });
       },
        mysend1(data,data_binary){
