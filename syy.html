@@ -97,7 +97,9 @@
         font-size:13px;
     font-weight: bold;
   }
-  
+  [v-cloak] {
+    display:none;
+  }
   </style>
 </head>
 
@@ -109,15 +111,15 @@
         <div>
           <el-input style="width:500px" placeholder="输入病号" v-model="username" clearable></el-input>
         </div>
-          <el-button type="danger" @click='Login()'>登录</el-button>
+          <el-button v-cloak type="danger" @click='Login()'>登录</el-button>
           </el-input>
         </div>
     <el-container>
 
         
-      <el-main v-if='username_real'>
-        
-        <el-divider content-position="center">{{result_suggestion}}基本信息</el-divider>
+      <el-main v-cloak v-if='username_real'>
+
+        <el-divider content-position="center">基本信息</el-divider>
         <el-row :gutter="1" style='text-align: left;font-size: 14px;color: #909399;line-height: 23px;vertical-align: middle;margin-bottom: 1px;'>
             <el-col :span="6"><div class="grid-content bg-purple basictabfont">{{basic1}}</div></el-col>
             <el-col :span="6"><div class="grid-content bg-purple basictabfont">{{basic2}}</div></el-col>
@@ -826,7 +828,7 @@
           </el-collapse>
 
         </div> -->
-          <div >
+          <!-- <div >
             <table >
               <tr v-for='item in tableData2'>{{item}}</tr>
             </table>
@@ -843,32 +845,38 @@
          
       </div>
 
-          <el-table style='width:1000px;margin:0 auto' align="center" border :data="tableData2" width='949px'>
-            <el-table-column prop="li1" label="NA" width="73px">
+          <el-table style='width:976px;margin:30px auto;' :header-cell-style="{'font-size':'14px','color':'#000','font-weight':'300'}" :data="tableData2_display">
+            <el-table-column prop="li1" label="NA" width="61px" align="center">
             </el-table-column>
-            <el-table-column prop="li2" label="K" width="73px">
+            <el-table-column prop="li2" label="K" width="61px" align="center">
             </el-table-column>
-            <el-table-column prop="li3" label="CL" width="73px">
+            <el-table-column prop="li3" label="CL" width="61px" align="center">
             </el-table-column>
-            <el-table-column prop="li4" label="WBC" width="73px">
+            <el-table-column prop="li4" label="WBC" width="61px" align="center">
             </el-table-column>
-            <el-table-column prop="li5" label="Hb/HCT" width="73px">
+            <el-table-column prop="li5" label="HB" width="61px" align="center">
             </el-table-column>
-            <el-table-column prop="li6" label="PLTS" width="73px">
+            <el-table-column prop="li6" label="PLT" width="61px" align="center">
             </el-table-column>
-            <el-table-column prop="li7" label="PT" width="73px">
+            <el-table-column prop="li7" label="PT" width="61px" align="center">
             </el-table-column>
-            <el-table-column prop="li8" label="APTT" width="73px">
+            <el-table-column prop="li8" label="APTT" width="61px" align="center">
             </el-table-column>
-            <el-table-column prop="li9" label="BUN" width="73px">
+            <el-table-column prop="li9" label="BUN" width="61px" align="center">
             </el-table-column>
-            <el-table-column prop="li10" label="Great" width="73px">
+            <el-table-column prop="li10" label="GRE" width="61px" align="center">
             </el-table-column>
-            <el-table-column prop="li11" label="CO2" width="73px">
+            <el-table-column prop="li11" label="CO2" width="61px" align="center">
             </el-table-column>
-            <el-table-column prop="li12" label="肝功" width="73px">
+            <el-table-column prop="li12" label="TP" width="61px" align="center">
             </el-table-column>
-            <el-table-column prop="li13" label="血糖" width="73px">
+            <el-table-column prop="li13" label="ALB" width="61px" align="center">
+            </el-table-column>
+            <el-table-column prop="li14" label="AST" width="61px" align="center">
+            </el-table-column>
+            <el-table-column prop="li15" label="ALT" width="61px" align="center">
+            </el-table-column>
+            <el-table-column prop="li16" label="GLU" width="61px" align="center">
             </el-table-column>
           </el-table>
           <!-- 下部表单 -->
@@ -2385,9 +2393,14 @@
           li11: '',
           li12: '',
           li13: '',
+          li14: '',
+          li15: '',
+          li16: '',
         },
 
       ],
+      
+  
       items: [
         { system: '胸痛', temp: 'xt', },
         { system: '心悸', temp: 'xj', },
@@ -2813,7 +2826,7 @@
            mydata.push(this.datalist[this.data1_7-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
-          }
+          },
         },
         methods:{clearall4(){
             this.data1_1=0;
@@ -5898,6 +5911,13 @@
         console.log("result_suggestion为"+result_suggestion)
         return  result_suggestion;
       },
+      tableData2_display:function () {
+            let tableData2_tran = [new Object(),];
+            for(let key in this.tableData2[0]){
+              tableData2_tran[0][key] = (this.tableData2[0][key] == 0) ? "未查" : this.tableData2[0][key];
+            }
+            return tableData2_tran;
+          }
     },
     methods: {
       //搜索多选特定项
@@ -5941,6 +5961,24 @@
           this.basic15='拟施操作：'+resp.data.assume;
           this.basic16='其他：'+resp.data.others;
 
+          let tableData2Sample = new Object();
+          tableData2Sample.li1 = resp.data.na;
+          tableData2Sample.li2 = resp.data.k;
+          tableData2Sample.li3 = resp.data.cl;
+          tableData2Sample.li4 = resp.data.wbc;
+          tableData2Sample.li5 = resp.data.hb;
+          tableData2Sample.li6 = resp.data.plts;
+          tableData2Sample.li7 = resp.data.pt;
+          tableData2Sample.li8 = resp.data.aptt;
+          tableData2Sample.li9 = resp.data.bun;
+          tableData2Sample.li10 = resp.data.creat;
+          tableData2Sample.li11 = resp.data.co2;
+          tableData2Sample.li12 = resp.data.tp;
+          tableData2Sample.li13 = resp.data.alb;
+          tableData2Sample.li14 = resp.data.ast;
+          tableData2Sample.li15 = resp.data.alt;
+          tableData2Sample.li16 = resp.data.glu;
+          this.$set(this.tableData2,0,tableData2Sample);
           // 同步result_binary
           var res='';
           if(resp.data.result_binary!=undefined){ res=resp.data.result_binary};
