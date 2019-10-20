@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>麻醉术前访视系统</title>
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
@@ -116,8 +116,8 @@
 
         
       <el-main v-if='username_real'>
-
-        <el-divider content-position="center">{{result_suggestion}}基本信息{{suggestion_get}}</el-divider>
+        
+        <el-divider content-position="center">{{result_suggestion}}基本信息</el-divider>
         <el-row :gutter="1" style='text-align: left;font-size: 14px;color: #909399;line-height: 23px;vertical-align: middle;margin-bottom: 1px;'>
             <el-col :span="6"><div class="grid-content bg-purple basictabfont">{{basic1}}</div></el-col>
             <el-col :span="6"><div class="grid-content bg-purple basictabfont">{{basic2}}</div></el-col>
@@ -833,9 +833,8 @@
           </div>
           <el-divider content-position="center">麻醉建议</el-divider>
 
-         <div  style='width:1000px;margin:0 auto' align="center" border>
+         <div  id="here"style='width:1000px;margin:0 auto' align="center" border>
          <div v-for='(user,i) in suggestion_get'>
-        
          <el-tag
          effect="danger" size=medium style="font-size:18px;margin-bottom: 6px;">
          {{user.suggestion}}
@@ -925,7 +924,7 @@
           </div>
           <!-- 底部表单 -->
 <div class='footer'><el-button type="primary" @click='submit'>上传<i class="el-icon-upload el-icon--right"></i></el-button>
-  <el-button type="primary" @click='suggestion'>生成麻醉建议<i class="el-icon-upload el-icon--right"></i></el-button>
+  <el-button type="primary" @click='suggestion' onclick="javascript:document.getElementById('here').scrollIntoView()">生成麻醉建议<i class="el-icon-upload el-icon--right"></i></el-button>
 </div>
        
       </el-main>
@@ -1393,6 +1392,7 @@
     并发症：多选  <el-checkbox-group v-model="data2_1">
         <el-checkbox border label="高钾>6mmol/L"></el-checkbox>
         <el-checkbox border label="高血压"></el-checkbox>
+        <el-checkbox border label="心衰"></el-checkbox>
         <el-checkbox border label="代谢性酸中毒，HCO3＜15mmol/L"></el-checkbox>
         <el-checkbox border label="水钠潴留"></el-checkbox>
         <el-checkbox border label="贫血"></el-checkbox>
@@ -5763,10 +5763,156 @@
         {
           result_suggestion.push('qijinA');
         };
+        if(this.data_binary10[4]==2)
+        {
+          result_suggestion.push('COPDA');
+        };
+        if(this.data_binary10[2]==4||this.data_binary10[2]==5)
+        {
+          result_suggestion.push('COPDB');
+        };
+        if(this.data_binary10[2]==4||this.data_binary10[2]==5)
+        {
+          result_suggestion.push('COPDB');
+        };
+        if(this.data_binary10[1]==3||this.data_binary10[1]==4)
+        {
+          result_suggestion.push('COPDE');
+        };
+        if(this.data_binary11[0]==2)
+        {
+          result_suggestion.push('feiyanA');
+        };
+        if(this.data_binary12[0]==2)
+        {
+          result_suggestion.push('qiA');
+        };
+        if(
+          this.data_binary13[1]==3||this.data_binary13[1]==4||this.data_binary13[1]==5||
+          this.data_binary13[2]==3||this.data_binary13[2]==4||this.data_binary13[2]==5||
+          this.data_binary13[3]==3||this.data_binary13[3]==4
+           )
+        {
+          result_suggestion.push('xiaochuanA');
+        };
+        if(this.data_binary14[1]==3)
+        {
+          result_suggestion.push('TBA');
+        };
+        if(this.data_binary16[4]==1)
+        {
+          result_suggestion.push('niaoA');
+        };
+        if(this.Findture(this.data16_d,['高钾>6mmol/L','心衰','代谢性酸中毒，HCO3<15mmol/L','呼吸困难'])==true)
+        {
+          result_suggestion.push('niaoB');
+        };
+        if(this.data_binary17[0]==1)
+        {
+          result_suggestion.push('xueniaoA');
+        };
+        if(this.Findture(this.data18_d,['高钾>6mmol/L'])==true)
+        {
+          result_suggestion.push('shengongA');
+        };
+        if(this.Findture(this.data20_d,['食管胃底静脉曲张出血'])==true)
+        {
+          result_suggestion.push('ganbingA');
+        };
+        if(this.Findture(this.data20_d,['腹水'])==true)
+        {
+          result_suggestion.push('ganbingB');
+        };
+        if(this.Findture(this.data20_d,['低蛋白血症'])==true)
+        {
+          result_suggestion.push('ganbingC');
+        };
+        if(this.Findture(this.data20_d,['肝性脑病'])==true)
+        {
+          result_suggestion.push('ganbingD');
+        };
+        if(this.data_binary20[1]==3)
+        {
+          result_suggestion.push('ganbingE');
+        };
+        if(this.data_binary26[0]==1)
+        {
+          result_suggestion.push('shenA');
+        };
+        if(this.data_binary26[0]==2)
+        {
+          result_suggestion.push('shenB');
+        };
+        if(this.data_binary26[0]==3)
+        {
+          result_suggestion.push('shenC');
+        };
+        if(this.data_binary26[0]==4)
+        {
+          result_suggestion.push('shenD');
+        };
+        if(this.data_binary26[0]==5||this.data_binary26[0]==6)
+        {
+          result_suggestion.push('shenE');
+        };
+        if(this.data_binary27[1]==2)
+        {
+          result_suggestion.push('baiA');
+        };
+        if(this.data_binary27[2]==2)
+        {
+          result_suggestion.push('baiB');
+        };
+        if(this.data_binary28[0]==3||this.data_binary28[0]==4)
+        {
+          result_suggestion.push('pinA');
+        };
+        if(this.data_binary28[1]==2)
+        {
+          result_suggestion.push('pinB');
+        };
+        if(this.data_binary28[1]==3)
+        {
+          result_suggestion.push('pinC');
+        };
+        if(this.Findture(this.data29_d,['高血糖昏迷','酮症酸中毒'])==true)
+        {
+          result_suggestion.push('tangA');
+        };
+        if(this.data_binary28[3]==3||this.data_binary28[3]==4)
+        {
+          result_suggestion.push('tangB');
+        };
+        if(this.data_binary28[4]==2)
+        {
+          result_suggestion.push('tangC');
+        };
+        if(this.data_binary31[1]==1)
+        {
+          result_suggestion.push('jiajianA');
+        };
+        if(this.data_binary32[0]==2)
+        {
+          result_suggestion.push('shenshangxianA');
+        };
+        console.log("result_suggestion为"+result_suggestion)
         return  result_suggestion;
       },
     },
     methods: {
+      //搜索多选特定项
+      Findture(data_d,x){
+        var newd=data_d.toString();
+        var newdata=newd.split(",");
+        for(let i=0;i<newdata.length;i++)
+        {
+          for(let j=0;j<x.length;j++){
+            if(newdata[i]==x[j]){
+             return true;
+           }
+          }
+        }
+      },
       //登录
       Login() {
         this.$http.jsonp('http://47.93.56.186:8080/syy_sqwz/patient/findByPatientNumber', {
@@ -5891,18 +6037,33 @@
         });
       },
       suggestion(){
-        this.$http.jsonp("http://47.93.56.186:8080/syy_sqwz/patient/findSuggestion", {
+        if(this.result_suggestion!=[]&&this.result_suggestion.length!=0){
+          this.$http.jsonp("http://47.93.56.186:8080/syy_sqwz/patient/findSuggestion", {
           params: {
             suggestionIdList: this.result_suggestion.join(','),
           },
           jsonp: "jsoncallback",
         }).then(resp =>{
-          // this.suggestion_get = resp.body.map((it) => {return it.suggestion});
-          this.suggestion_get=resp.body;
+         this.suggestion_get=resp.body;
+         this.$message({
+          message: '麻醉建议生成成功',
+          type: 'success',
+          center: true
+        });
         console.log(this.suggestion_get);
         }).catch(resp =>{
           alert("麻醉建议提交失败")
         });
+        }
+      else{
+        this.suggestion_get=[];
+        this.$message({
+          message: '无麻醉建议',
+          type: 'warning',
+          center: true
+        })
+      }
+
       },
        mysend1(data,data_binary){
       this.data1 = data.join(' ');
