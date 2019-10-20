@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>麻醉术前访视系统</title>
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
@@ -828,48 +828,24 @@
           </el-collapse>
 
         </div> -->
-          <!-- <div >
+         <div >
             <table >
               <tr v-for='item in tableData2'>{{item}}</tr>
             </table>
-          </div> -->
+          </div>
+          <el-divider content-position="center">麻醉建议</el-divider>
 
+         <div  id="here"style='width:1000px;margin:0 auto' align="center" border>
+         <div v-for='(user,i) in suggestion_get'>
+         <el-tag
+         effect="danger" size=medium style="font-size:18px;margin-bottom: 6px;">
+         {{user.suggestion}}
+       </el-tag>
+        </div>
+         
+      </div>
 
-
-          <el-table style='width:976px;margin:30px auto;' :header-cell-style="{'font-size':'14px','color':'#000','font-weight':'300'}" :data="tableData2_display">
-            <el-table-column prop="li1" label="NA" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li2" label="K" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li3" label="CL" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li4" label="WBC" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li5" label="HB" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li6" label="PLT" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li7" label="PT" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li8" label="APTT" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li9" label="BUN" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li10" label="GRE" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li11" label="CO2" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li12" label="TP" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li13" label="ALB" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li14" label="AST" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li15" label="ALT" width="61px" align="center">
-            </el-table-column>
-            <el-table-column prop="li16" label="GLU" width="61px" align="center">
-            </el-table-column>
-          </el-table>
+     
           <!-- 下部表单 -->
           <div>
             <div style="margin-top: 20px">综合评估： 麻醉风险评估(ASA分级)
@@ -922,8 +898,10 @@
             </el-input>
           </div>
           <!-- 底部表单 -->
-<div class='footer'><el-button type="primary" @click='submit'>上传<i class="el-icon-upload el-icon--right"></i></el-button></div>
-                    
+<div class='footer'><el-button type="primary" @click='submit'>上传<i class="el-icon-upload el-icon--right"></i></el-button>
+  <el-button type="primary" @click='suggestion' onclick="javascript:document.getElementById('here').scrollIntoView()">生成麻醉建议<i class="el-icon-upload el-icon--right"></i></el-button>
+</div>
+       
       </el-main>
 
     </el-container>
@@ -1389,6 +1367,7 @@
     并发症：多选  <el-checkbox-group v-model="data2_1">
         <el-checkbox border label="高钾>6mmol/L"></el-checkbox>
         <el-checkbox border label="高血压"></el-checkbox>
+        <el-checkbox border label="心衰"></el-checkbox>
         <el-checkbox border label="代谢性酸中毒，HCO3＜15mmol/L"></el-checkbox>
         <el-checkbox border label="水钠潴留"></el-checkbox>
         <el-checkbox border label="贫血"></el-checkbox>
@@ -2160,7 +2139,8 @@
       height:'',weight:'',
       sbp:'',dbp:'',r:'',p:'',t:'',
       pre_diagnose:'',assume:'',chief_complaint:'',others:'',
-      
+      result_suggestion_get:'',
+      suggestion_get:[],
       // 声明组件传量
       data1:'',
       data_binary1:'',
@@ -2758,20 +2738,20 @@
         template: '#zytemp',
         data() {
           return {
-            data1_1: '',
-            data1_2: '',
-            data1_3: '',
-            data1_4: '',
-            data1_5: '',
-            data1_6: '',
-            data1_7: '',
+            data1_1: 0,
+            data1_2: 0,
+            data1_3: 0,
+            data1_4: 0,
+            data1_5: 0,
+            data1_6: 0,
+            data1_7: 0,
             datalist: [
-              { value: '1', 病史: '<5', 类型: '房缺', 肺动脉高压:'无',分流:'右向左',治疗情况:'未正规治疗',既往心衰病史:'是',心功能:'Ⅰ',},
-              { value: '2', 病史: '5-10', 类型: '室缺', 肺动脉高压:'轻度',分流:'左向右',治疗情况:'药物治疗',既往心衰病史:'否',心功能:'Ⅱ',},
-              { value: '3', 病史: '>10', 类型: '动脉导管未闭ASD',肺动脉高压:'中度',分流:'双向',治疗情况:'手术治疗',既往心衰病史:'',心功能:'Ⅲ', },
-              { value: '4', 病史: '', 类型: '法洛四联症', 肺动脉高压:'重度',分流:'',治疗情况:'',既往心衰病史:'',心功能:'Ⅳ',},
-              { value: '5', 病史: '', 类型: '主动脉缩窄',肺动脉高压:'',分流:'',治疗情况:'',既往心衰病史:'',心功能:'', },
-              { value: '6', 病史: '', 类型: '肺动脉狭窄', 肺动脉高压:'',分流:'',治疗情况:'',既往心衰病史:'',心功能:'',},
+              { value: 1, 病史: '<5', 类型: '房缺', 肺动脉高压:'无',分流:'右向左',治疗情况:'未正规治疗',既往心衰病史:'是',心功能:'Ⅰ',},
+              { value: 2, 病史: '5-10', 类型: '室缺', 肺动脉高压:'轻度',分流:'左向右',治疗情况:'药物治疗',既往心衰病史:'否',心功能:'Ⅱ',},
+              { value: 3, 病史: '>10', 类型: '动脉导管未闭ASD',肺动脉高压:'中度',分流:'双向',治疗情况:'手术治疗',既往心衰病史:'',心功能:'Ⅲ', },
+              { value: 4, 病史: '', 类型: '法洛四联症', 肺动脉高压:'重度',分流:'',治疗情况:'',既往心衰病史:'',心功能:'Ⅳ',},
+              { value: 5, 病史: '', 类型: '主动脉缩窄',肺动脉高压:'',分流:'',治疗情况:'',既往心衰病史:'',心功能:'', },
+              { value: 6, 病史: '', 类型: '肺动脉狭窄', 肺动脉高压:'',分流:'',治疗情况:'',既往心衰病史:'',心功能:'',},
             ],
           }
         },
@@ -2810,19 +2790,19 @@
            if(this.data1_6!=0){
            mydata.push(this.datalist[this.data1_6-1]['value']);}else{mydata.push(0);};
            if(this.data1_7!=0){
-           mydata.push(this.datalist[this.data1_6-1]['value']);}else{mydata.push(0);};
+           mydata.push(this.datalist[this.data1_7-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
           },
         },
         methods:{clearall4(){
-            this.data1_1='';
-            this.data1_2='';
-            this.data1_3='';
-            this.data1_4='';
-            this.data1_5='';
-            this.data1_6='';
-            this.data1_7='';
+            this.data1_1=0;
+            this.data1_2=0;
+            this.data1_3=0;
+            this.data1_4=0;
+            this.data1_5=0;
+            this.data1_6=0;
+            this.data1_7=0;
           }
         },
         updated:function() {
@@ -2937,6 +2917,8 @@
            mydata.push(this.datalist[this.data1_2-1]['value']);}else{mydata.push(0);};
            if(this.data1_3!=0){
            mydata.push(this.datalist[this.data1_3-1]['value']);}else{mydata.push(0);};
+           if(this.data1_4!=0){
+           mydata.push(this.datalist[this.data1_4-1]['value']);}else{mydata.push(0);};
            console.log(mydata);
            return mydata;
           }
@@ -5663,6 +5645,239 @@
         console.log('最终多选数据：'+result_input);
         return result_input;
       },
+      result_suggestion:function(){
+        var result_suggestion = new Array();
+        if(this.data_binary1[0]==1 || this.data_binary1[0]==2)
+        {
+          result_suggestion.push('xiongA');
+        };
+        if(this.data_binary1[1]==1||this.data_binary1[2]==1||this.data_binary1[3]==1)
+        {
+          result_suggestion.push('xiongB');
+        };
+        if(this.data_binary1[4]==4)
+        {
+          result_suggestion.push('xiongC');
+        };
+        if(this.data_binary1[5]==4 || this.data_binary1[6]==4)
+        {
+          result_suggestion.push('xiongD');
+        };
+        if(this.data_binary1[7]==2)
+        {
+          result_suggestion.push('xiongE');
+        };
+        if(this.data_binary1[7]==3)
+        {
+          result_suggestion.push('xiongF');
+        };
+        if(this.data_binary2[0]==2)
+        {
+          result_suggestion.push('xinjiA');
+        };
+        if(this.data_binary2[0]==3)
+        {
+          result_suggestion.push('xinjiB');
+        };
+        if(this.data_binary2[0]==4)
+        {
+          result_suggestion.push('xinjiC');
+        };
+        if(this.data_binary3[3]==4)
+        {
+          result_suggestion.push('banA');
+        };
+        if(this.data_binary4[1]==4)
+        {
+          result_suggestion.push('zaA');
+        };
+        if(this.data_binary4[3]==1 || this.data_binary4[3]==3)
+        {
+          result_suggestion.push('zaC');
+        };
+        if(this.data_binary4[2]==4)
+        {
+          result_suggestion.push('zaD');
+        };
+        if(this.data_binary4[6]==4)
+        {
+          result_suggestion.push('zaE');
+        };
+        if(this.data_binary5[2]==2||this.data_binary5[2]==3||this.data_binary5[2]==4)
+        {
+          result_suggestion.push('gaoA');
+        };
+        if(this.data5_d!=[]&&this.data5_d.length!=0)
+        {
+          result_suggestion.push('gaoB');
+        };
+        if(this.data_binary5[2]==1)
+        {
+          result_suggestion.push('gaoC');
+        };
+        if(this.data_binary5[3]==1)
+        {
+          result_suggestion.push('gaoD');
+        };
+        if(this.data_binary6[0]==1||this.data_binary6[0]==2)
+        {
+          result_suggestion.push('xingengA');
+        };
+        if(this.data_binary6[1]==1||this.data_binary6[1]==2||this.data_binary6[1]==3)
+        {
+          result_suggestion.push('xingengB');
+        };
+        if(this.data_binary6[2]==4||this.data_binary6[2]==5)
+        {
+          result_suggestion.push('xingengC');
+        };
+        if(this.data_binary6[3]==3||this.data_binary6[3]==4)
+        {
+          result_suggestion.push('xingengD');
+        };
+        if(this.data_binary7[2]==4)
+        {
+          result_suggestion.push('yiA');
+        };
+        if(this.data_binary8[2]==4)
+        {
+          result_suggestion.push('qijinA');
+        };
+        if(this.data_binary10[4]==2)
+        {
+          result_suggestion.push('COPDA');
+        };
+        if(this.data_binary10[2]==4||this.data_binary10[2]==5)
+        {
+          result_suggestion.push('COPDB');
+        };
+        if(this.data_binary10[2]==4||this.data_binary10[2]==5)
+        {
+          result_suggestion.push('COPDB');
+        };
+        if(this.data_binary10[1]==3||this.data_binary10[1]==4)
+        {
+          result_suggestion.push('COPDE');
+        };
+        if(this.data_binary11[0]==2)
+        {
+          result_suggestion.push('feiyanA');
+        };
+        if(this.data_binary12[0]==2)
+        {
+          result_suggestion.push('qiA');
+        };
+        if(
+          this.data_binary13[1]==3||this.data_binary13[1]==4||this.data_binary13[1]==5||
+          this.data_binary13[2]==3||this.data_binary13[2]==4||this.data_binary13[2]==5||
+          this.data_binary13[3]==3||this.data_binary13[3]==4
+           )
+        {
+          result_suggestion.push('xiaochuanA');
+        };
+        if(this.data_binary14[1]==3)
+        {
+          result_suggestion.push('TBA');
+        };
+        if(this.data_binary16[4]==1)
+        {
+          result_suggestion.push('niaoA');
+        };
+        if(this.Findture(this.data16_d,['高钾>6mmol/L','心衰','代谢性酸中毒，HCO3<15mmol/L','呼吸困难'])==true)
+        {
+          result_suggestion.push('niaoB');
+        };
+        if(this.data_binary17[0]==1)
+        {
+          result_suggestion.push('xueniaoA');
+        };
+        if(this.Findture(this.data18_d,['高钾>6mmol/L'])==true)
+        {
+          result_suggestion.push('shengongA');
+        };
+        if(this.Findture(this.data20_d,['食管胃底静脉曲张出血'])==true)
+        {
+          result_suggestion.push('ganbingA');
+        };
+        if(this.Findture(this.data20_d,['腹水'])==true)
+        {
+          result_suggestion.push('ganbingB');
+        };
+        if(this.Findture(this.data20_d,['低蛋白血症'])==true)
+        {
+          result_suggestion.push('ganbingC');
+        };
+        if(this.Findture(this.data20_d,['肝性脑病'])==true)
+        {
+          result_suggestion.push('ganbingD');
+        };
+        if(this.data_binary20[1]==3)
+        {
+          result_suggestion.push('ganbingE');
+        };
+        if(this.data_binary26[0]==1)
+        {
+          result_suggestion.push('shenA');
+        };
+        if(this.data_binary26[0]==2)
+        {
+          result_suggestion.push('shenB');
+        };
+        if(this.data_binary26[0]==3)
+        {
+          result_suggestion.push('shenC');
+        };
+        if(this.data_binary26[0]==4)
+        {
+          result_suggestion.push('shenD');
+        };
+        if(this.data_binary26[0]==5||this.data_binary26[0]==6)
+        {
+          result_suggestion.push('shenE');
+        };
+        if(this.data_binary27[1]==2)
+        {
+          result_suggestion.push('baiA');
+        };
+        if(this.data_binary27[2]==2)
+        {
+          result_suggestion.push('baiB');
+        };
+        if(this.data_binary28[0]==3||this.data_binary28[0]==4)
+        {
+          result_suggestion.push('pinA');
+        };
+        if(this.data_binary28[1]==2)
+        {
+          result_suggestion.push('pinB');
+        };
+        if(this.data_binary28[1]==3)
+        {
+          result_suggestion.push('pinC');
+        };
+        if(this.Findture(this.data29_d,['高血糖昏迷','酮症酸中毒'])==true)
+        {
+          result_suggestion.push('tangA');
+        };
+        if(this.data_binary28[3]==3||this.data_binary28[3]==4)
+        {
+          result_suggestion.push('tangB');
+        };
+        if(this.data_binary28[4]==2)
+        {
+          result_suggestion.push('tangC');
+        };
+        if(this.data_binary31[1]==1)
+        {
+          result_suggestion.push('jiajianA');
+        };
+        if(this.data_binary32[0]==2)
+        {
+          result_suggestion.push('shenshangxianA');
+        };
+        console.log("result_suggestion为"+result_suggestion)
+        return  result_suggestion;
+      },
       tableData2_display:function () {
             let tableData2_tran = [new Object(),];
             for(let key in this.tableData2[0]){
@@ -5672,6 +5887,19 @@
           }
     },
     methods: {
+      //搜索多选特定项
+      Findture(data_d,x){
+        var newd=data_d.toString();
+        var newdata=newd.split(",");
+        for(let i=0;i<newdata.length;i++)
+        {
+          for(let j=0;j<x.length;j++){
+            if(newdata[i]==x[j]){
+             return true;
+           }
+          }
+        }
+      },
       //登录
       Login() {
         this.$http.jsonp('http://47.93.56.186:8080/syy_sqwz/patient/findByPatientNumber', {
@@ -5812,6 +6040,35 @@
         }).catch(resp =>{
           alert("二级信息提交失败")
         });
+      },
+      suggestion(){
+        if(this.result_suggestion!=[]&&this.result_suggestion.length!=0){
+          this.$http.jsonp("http://47.93.56.186:8080/syy_sqwz/patient/findSuggestion", {
+          params: {
+            suggestionIdList: this.result_suggestion.join(','),
+          },
+          jsonp: "jsoncallback",
+        }).then(resp =>{
+         this.suggestion_get=resp.body;
+         this.$message({
+          message: '麻醉建议生成成功',
+          type: 'success',
+          center: true
+        });
+        console.log(this.suggestion_get);
+        }).catch(resp =>{
+          alert("麻醉建议提交失败")
+        });
+        }
+      else{
+        this.suggestion_get=[];
+        this.$message({
+          message: '无麻醉建议',
+          type: 'warning',
+          center: true
+        })
+      }
+
       },
        mysend1(data,data_binary){
       this.data1 = data.join(' ');
